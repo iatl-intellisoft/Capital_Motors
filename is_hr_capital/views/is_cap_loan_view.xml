@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- short loan -->
+    <record id="tree_hr_short_loan_view" model="ir.ui.view">
+        <field name="name">hr.monthlyloan.tree</field>
+        <field name="model">hr.monthlyloan</field>
+        <field name="arch" type="xml">
+            <tree string="Short Loan Requests">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="loan_amount" sum="loan_amount"/>
+                <field name="date"/>
+                <field name="create_uid"/>
+                <field name="write_uid"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="form_hr_short_loan_view" model="ir.ui.view">
+        <field name="name">hr.monthlyloan.form</field>
+        <field name="model">hr.monthlyloan</field>
+        <field name="arch" type="xml">
+            <form string="Short Loan Requests">
+                <header>
+                    <button class="oe_highlight" groups="is_hr_capital.group_hr_loan_user" name="loan_confirm" states="draft" string="Send To HR" type="object"/>
+                    <button class="oe_highlight" groups="hr.group_hr_manager" name="loan_approve" states="confirm" string="Approve" type="object"/>
+                    <button class="oe_highlight" groups="account.group_account_manager" name="loan_validate" states="approve" string="Generate Journal Entry" type="object"/>
+                    <button class="oe_inline" groups="hr.group_hr_manager" name="loan_refuse" states="confirm" string="Refuse" type="object"/>
+                    <button class="oe_highlight" groups="hr.group_hr_manager" name="loan_reset" states="refuse" string="Reset To Draft" type="object"/>
+                    <field name="state" statusbar_colors="{'draft':'blue','confirm':'blue','done':'blue','refuse':'red'}" statusbar_visible="draft,confirm,approve,done" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div colspan="4">
+                        <group>
+                            <field class="oe_inline" name="name" readonly="1"/>
+                            <field class="oe_inline" name="date" readonly="1"/>
+                        </group>
+                    </div>
+                    <div colspan="4">
+                        <group>
+                            <field class="oe_inline" name="employee_id"/>
+                            <field class="oe_inline" name="department_id"/>
+                            <field class="oe_inline" name="employee_salary"/>
+                            <field attrs="{'readonly':[('state','!=','draft')]}" class="oe_inline" name="loan_amount"/>
+                        </group>
+                    </div>
+                    <notebook attrs="{'invisible':[('state','in',['draft', 'confirm'])]}">
+                        <page string="Accounting Information">
+                            <group>
+                                <group>
+                                    <field attrs="{'readonly':[('state','=','done')], 'required':[('state','=','approve')]}" name="employee_account"/>
+                                    <field attrs="{'readonly':[('state','=','done')], 'required':[('state','=','approve')]}" name="journal_id"/>
+                                    <field attrs="{'readonly':[('state','=','done')]}" name="payment_account"/>
+                                </group>
+                                <group>
+                                    <field attrs="{'readonly':[('state','=','done')], 'required':[('state','=','approve')]}" name="loan_account"/>
+                                    <field attrs="{'invisible':[('state','not in',['done','paid'])]}" name="move_id" readonly="1"/>
+                                    <field attrs="{'invisible':[('state','not in',['done','paid'])]}" name="move_id_pay" readonly="1"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="hr_short_loan_filter" model="ir.ui.view">
+        <field name="name">hr.monthlyloan.search</field>
+        <field name="model">hr.monthlyloan</field>
+        <field name="arch" type="xml">
+            <search string="Search Short Loan">
+                <field name="name" string="Loan Name"/>
+                <field name="employee_id"/>
+                <field name="date"/>
+                <filter domain="[('state','=','draft')]" help="Draft Loan" name="draft" string="Draft"/>
+                <filter domain="[('state','=','confirm')]" help="Confirm Loan" name="confirm" string="Confirm"/>
+                <filter domain="[('state','=','approve')]" help="Approve Loan" name="approve" string="approve"/>
+                <filter domain="[('state','=','done')]" help="Done Loan" name="done_filter" string="Done"/>
+                <group col="8" colspan="4" expand="0" string="Group By...">
+                    <filter context="{'group_by':'state'}" name="state" string="State"/>
+                    <filter context="{'group_by':'employee_id'}" name="employee_id" string="Employee"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_hr_short_loan_request" model="ir.actions.act_window">
+        <field name="name">Salary Advance</field>
+        <field name="res_model">hr.monthlyloan</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="hr_short_loan_filter"/>
+    </record>
+    <menuitem groups="group_hr_loan_user" id="menu_hr_loans" name="Loans" parent="hr.menu_hr_root" sequence="20"/>
+    <menuitem action="action_hr_short_loan_request" groups="group_hr_loan_user" id="menu_hr_short_loan_request" name="Short Loan" parent="menu_hr_loans"/>
+</odoo>

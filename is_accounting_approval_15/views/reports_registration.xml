@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Register Finance Approval Form Report -->
+        <!-- <report id="report_finance_approval_form"
+                string="Finance Approval"
+                model="finance.approval"
+                report_type="qweb-pdf"
+                file="is_accounting_approval_15.report_finance_approval"
+                name="is_accounting_approval_15.report_finance_approval"
+                menu="True"
+        /> -->
+        <record id="report_finance_approval_form" model="ir.actions.report">
+            <field name="name">Finance Approval</field>
+            <field name="model">finance.approval</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">is_accounting_approval_15.report_finance_approval</field>
+            <field name="report_file">is_accounting_approval_15.report_finance_approval</field>
+            <field name="binding_model_id" ref="is_accounting_approval_15.model_finance_approval"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

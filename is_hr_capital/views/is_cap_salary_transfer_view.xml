@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="salary_transfer_form" model="ir.ui.view">
+            <field name="name">salary.transfer.form</field>
+            <field name="model">salary.transfer</field>
+            <field name="arch" type="xml">
+                <form string="Salary Transfer">
+                    <header>
+                        <button class="oe_highlight" name="%(action_hr_salary_transfer_by_employees)d" states="draft" string="Generate Payment" type="action"/>
+                        <button class="oe_highlight" context="{'payslip_generate_pdf': True}" name="action_validate" states="verify" string="Validate" type="object"/>
+                        <button name="action_draft" states="close" string="Set to Draft" type="object"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <label class="oe_edit_only" for="name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <group>
+                            <group>
+                                <label for="date_start" string="Period"/>
+                                <div class="o_row">
+                                    <field class="oe_inline" name="date_start"/>- 
+                                    <field class="oe_inline" name="date_end"/></div>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="salary_transfer_tree" model="ir.ui.view">
+            <field name="name">salary.transfer.tree</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="arch" type="xml">
+                <tree string="Salary Transfer">
+                    <field name="name"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_salary_transfer" model="ir.actions.act_window">
+            <field name="name">Salary Transfer</field>
+            <field name="res_model">salary.transfer</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem action="action_salary_transfer" groups="hr.group_hr_manager" id="salary_transfer_id" name="Salary Transfer" parent="hr_work_entry_contract_enterprise.menu_hr_payroll_root" sequence="20"/>
+    </data>
+</odoo>

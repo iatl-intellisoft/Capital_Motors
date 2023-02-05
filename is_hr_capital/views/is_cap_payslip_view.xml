@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hr_payslip_form_inherited" model="ir.ui.view">
+        <field name="name">view.hr.payslip.form.inherited</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_payslip_done']" position="replace">
+                <button class="oe_highlight" groups="account.group_account_manager" name="action_payslip_done" states="verify" string="Confirm" type="object"/>
+            </xpath>
+            <xpath expr="//field[@name='number']" position="before">
+                <field name="no_of_days"/>
+                <field name="grants"/>
+                <field invisible="1" name="worked_days"/>
+            </xpath>
+            <xpath expr="//button[@name='action_payslip_done']" position="before">
+                <button class="oe_highlight" name="action_hr_confirm" states="draft" string="Approve" type="object"/>
+            </xpath>
+            <xpath expr="//notebook/page" position="after">
+                <page string="Deductions">
+                    <center>
+                        <table border="0" cellpadding="5" cellspacing="10" width="100%">
+                            <tr>
+                                <!--                                <td>-->
+                                <!--                                    <h3><label for="penalties_deduction" string="Penalties Dedication" /></h3>-->
+                                <!--                                </td>-->
+                                <!--                                <td>-->
+                                <!--                                    <field name="penalties_deduction"/>-->
+                                <!--                                </td>-->
+                                <!--                                <td>-->
+                                <!--                                    <h3><label for="mon_lost_hours" string="Loss of Hours" /></h3>-->
+                                <!--                                </td>-->
+                                <!--                                <td>-->
+                                <!--                                    <field name="mon_lost_hours"/></td>-->
+                                <td>
+                                    <h3>
+                                        <label for="long_loan" string="Long Loan"/>
+                                    </h3>
+                                </td>
+                                <td>
+                                    <field name="long_loan"/>
+                                </td>
+                                <td>
+                                    <h3>
+                                        <label for="short_loan" string="Monthly Loan"/>
+                                    </h3>
+                                </td>
+                                <td>
+                                    <field name="short_loan"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </center>
+                    <!--                    <field name="unpaid_leave" invisible="1"/>-->
+                    <!--                    <field name="income_tax" invisible="1"/>-->
+                    <!--                    <field name="representation_allw" invisible="1"/>-->
+                    <!--                    <field name="family_burdens" invisible="1"/>-->
+                    <field invisible="1" name="net_salary"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_hr_payslip_filter_inherited" model="ir.ui.view">
+        <field name="name">view.hr.payslip.filter.inherited</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search/filter" position="after">
+                <!--                <seperator/>-->
+                <filter name="current_month" string="Current Month"
+                    domain="[('date_from','=', datetime.datetime.now().strftime('%Y-%m-01'))]"/>
+                <!-- domain="[('date_from','=', datetime.datetime.now().strftime('%Y-%m-01'))]" -->
+            </xpath>
+        </field>
+    </record>
+    <record id="view_payslip_tree_inherited" model="ir.ui.view">
+        <field name="name">view.payslip.tree.inherited</field>
+        <field name="model">hr.payslip</field>
+        <field name="inherit_id" ref="hr_payroll.view_hr_payslip_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_to']" position="after">
+                <field name="net_salary" sum="net_salary"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_hr_payslip_run_form_inherited" model="ir.ui.view">
+        <field name="name">view.hr.payslip.run.form.inherited</field>
+        <field name="model">hr.payslip.run</field>
+        <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="grants"/>
+            </xpath>
+            <!--            <xpath expr="//button[@name='action_validate']" position="replace">-->
+            <!--&lt;!&ndash;                <button string="Confirm" name="close_payslip_run" states="confirm" type="object" groups="account.group_account_manager" class="oe_highlight"/>&ndash;&gt;-->
+            <!--                <button name="action_validate" type="object" string="Validate" states="verify" class="oe_highlight" context="{'payslip_generate_pdf': True}" groups="account.group_account_manager"/>-->
+            <!--            </xpath>-->
+            <!--            <xpath expr="//button[@name='action_validate']" position="before">-->
+            <!--                <button string="Approve" name="action_hr_confirm" type="object" states="draft" class="oe_highlight"/>-->
+            <!--            </xpath>-->
+            <!--            <xpath expr="//button[@name='draft_payslip_run']" position="attributes">-->
+            <!--                <attribute name="invisible">True</attribute>-->
+            <!--            </xpath>-->
+            <xpath expr="//button[@name='action_validate']" position="attributes">
+                <attribute name="groups">account.group_account_manager</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

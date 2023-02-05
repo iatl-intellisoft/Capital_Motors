@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_banks_form" model="ir.ui.view">
+            <field name="name">wizard.banks.form</field>
+            <field name="model">wizard.other.banks</field>
+            <field name="arch" type="xml">
+                <form string="Banks">
+                    <group>
+                        <group>
+                            <field name="from_date"/>
+                            <field name="bank_id"/>
+                        </group>
+                        <group>
+                            <field name="to_date"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button class="btn-primary" name="print_report" string="Print" type="object"/>
+                        <button class="btn-secondary" special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="view_banks_report_excel" model="ir.ui.view">
+            <field name="name">view.banks.report.excel</field>
+            <field name="model">banks.report.excel</field>
+            <field name="arch" type="xml">
+                <form string="File to Downloads">
+                    <field invisible="1" name="name"/>
+                    <field filename="name" name="file_download"/>
+                </form>
+            </field>
+        </record>
+        <record id="action_banks_report_excel2" model="ir.actions.act_window">
+            <field name="name">Banks Report Excel</field>
+            <field name="res_model">wizard.other.banks</field>
+            <!--            <field name="view_type">form</field>-->
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem action="action_banks_report_excel2" groups="hr.group_hr_manager,account.group_account_manager" id="menu_banks_report2" name="Banks Report" parent="hr_work_entry_contract_enterprise.menu_hr_payroll_root" sequence="55"/>
+    </data>
+</odoo>

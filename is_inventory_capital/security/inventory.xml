@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!--    <record model="ir.module.category" id="inventory_management">-->
+        <!--      <field name="name">Inventory Management</field>-->
+        <!--      <field name="description">User access level for Inventory Management module</field>-->
+        <!--&lt;!&ndash;      <field name="sequence">5</field>&ndash;&gt;-->
+        <!--    </record>-->
+        <record id="group_cost_management" model="res.groups">
+            <field name="name">Cost Management</field>
+            <field eval="[(4, ref('base.group_user'))]" name="implied_ids"/>
+            <!--      <field name="category_id" ref="is_inventory_autobash.inventory_management"/>-->
+        </record>
+    </data>
+</odoo>

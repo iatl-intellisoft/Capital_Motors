@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_finance_a,finance.approval,model_finance_approval,base.group_user,1,1,1,0
+access_finance_b,finance.approval,model_finance_approval,is_accounting_approval_14.auditor_access_group,1,1,1,0
+access_finance_c,finance.approval,model_finance_approval,account.group_account_manager,1,1,1,1
+access_finance_d,finance.approval,model_finance_approval,is_accounting_approval_14.general_manager_access_group,1,1,1,0
+access_finance_e,finance.approval,model_finance_approval,is_accounting_approval_14.manager_access_group,1,1,1,0
+access_finance_f,finance.approval,model_finance_approval,account.group_account_user,1,1,1,0
+access_finance_g,finance.approval,account.model_account_account,account.group_account_user,1,1,0,0
+access_finance_line,finance.approval.line,model_finance_approval_line,account.group_account_user,1,1,0,0
+access_finance_line_m,finance.approval.line,model_finance_approval_line,account.group_account_manager,1,1,0,0
+access_account_payment_method,account.payment.method,account.model_account_payment_method,base.group_user,1,1,1,0

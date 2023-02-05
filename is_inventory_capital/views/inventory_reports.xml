@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    <data>-->
+    <!--        <report-->
+    <!--        id="picking_ticket"-->
+    <!--        model="stock.picking"-->
+    <!--        string="Picking Ticket"-->
+    <!--        report_type="qweb-pdf"-->
+    <!--        name="is_inventory_capital.report_picking_ticket"-->
+    <!--        file="is_inventory_capital.report_picking_ticket"-->
+    <!--        />-->
+    <!--    </data>-->
+</odoo>

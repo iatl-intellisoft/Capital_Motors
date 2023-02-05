@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_insurance_basic_list_report" model="ir.ui.view">
+            <field name="name">insurance.basic.list.form</field>
+            <field name="model">insurance.basic.list</field>
+            <field name="arch" type="xml">
+                <form string="Insurance Basic List">
+                    <group>
+                        <group>
+                            <field name="emp_id"/>
+                        </group>
+                        <!--                        <field name="date_from"/>-->
+                        <!--                        <field name="date_to"/>-->
+                    </group>
+                    <footer>
+                        <button class="btn-primary" name="print_report" string="Print" type="object"/>
+                        <button class="btn-secondary" special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_insurance_basic_list_report_excel" model="ir.actions.act_window">
+            <field name="name">Insurance Basic List</field>
+            <field name="res_model">insurance.basic.list</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record id="view_insurance_basic_list_excel" model="ir.ui.view">
+            <field name="name">view.insurance.basic.list.excel</field>
+            <field name="model">insurance.basic.list.excel</field>
+            <field name="arch" type="xml">
+                <form string="File to Downloads">
+                    <field invisible="1" name="name"/>
+                    <field filename="name" name="file_download"/>
+                </form>
+            </field>
+        </record>
+        <menuitem action="action_insurance_basic_list_report_excel" groups="hr.group_hr_manager" id="insurance_basic_list_report" name="Employee Social Insurance Report" parent="hr_payroll.menu_hr_payroll_report" sequence="6"/>
+    </data>
+</odoo>

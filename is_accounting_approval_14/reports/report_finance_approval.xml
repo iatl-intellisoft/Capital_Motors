@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_finance_approval">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div class="oe_structure">
+                                <div class="row row-centered">
+                                    <div class="col-md-12 col-centered">
+                                        <group string="Financial Approval">
+                                            <table class="table">
+                                                <tr class="text-center">
+                                                    <td colspan="12" style="border: 1px solid white;">
+                                                        <h4>
+                                                            <strong>طلب تصديق</strong>
+                                                        </h4>
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-center">
+                                                    <td colspan="12" style="border: 1px solid white;">
+                                                        <h4>
+                                                            <strong>Payment Approval Request</strong>
+                                                        </h4>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white;">
+                                                        <strong>Date :</strong>
+                                                    </td>
+                                                    <td style="border: 1px solid white; text-align: left;  ">
+                                                        <span t-field="o.fa_date"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1px solid white;">
+                                                        <strong>Department:</strong>
+                                                    </td>
+                                                    <td style="border: 1px solid white; text-align: left;  ">
+                                                        <span t-field="o.department_id"/>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="border: 1 px solid white;">
+                                                        <strong>Kindly approve the following payment.</strong>
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+
+                                                    <td style="border: 1 px solid white;">
+                                                        <strong>Check – شيك</strong>
+                                                        <t t-if="o.payment_method.name =='Checks'">
+                                                            <input type="checkbox" id="oe_import_tracking"
+                                                                   checked="checked"/>
+                                                        </t>
+                                                        <t t-if="not o.payment_method">
+                                                            <input type="checkbox" id="oe_import_tracking"/>
+                                                        </t>
+                                                    </td>
+
+
+                                                        <td style="border: 1 px solid white;">
+                                                            <strong>Cash – نقدا</strong>
+                                                            <t t-if="o.payment_method.name =='Manual'">
+                                                            <input type="checkbox" id="oe_import_tracking"
+                                                                   checked="checked"/>
+                                                             </t>
+                                                            <t t-if="not o.payment_method">
+                                                            <input type="checkbox" id="oe_import_tracking"/>
+                                                        </t>
+                                                        </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white;">
+                                                        <strong>Beneficiary :</strong>
+                                                    </td>
+                                                    <td style="border: 1px solid white; text-align: left;  "
+                                                    >
+                                                        <span t-field="o.beneficiary"/>
+                                                    </td>
+                                                </tr>
+
+                                                <table class="table">
+                                                    <tr>
+                                                        <td colspan="12" style="border: 1px solid black;">
+                                                            <strong>Description</strong>
+                                                        </td>
+                                                        <td colspan="12" style="border: 1px solid black;">
+                                                            <strong>Amount</strong>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="12" style="border: 1px solid black;">
+                                                            <span t-field="o.reason"/>
+                                                        </td>
+                                                        <td colspan="12" style="border: 1px solid black;">
+                                                            <span t-field="o.request_amount"/>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+
+                                                <table class="table">
+                                                    <tr>
+                                                        <td colspan="12" style="border: 1px solid black;">
+                                                            <strong>Requested by:</strong>
+                                                            <span t-field="o.requester"/>
+
+                                                        </td>
+                                                        <td colspan="12" style="border: 1px solid black;">
+                                                            <strong>Approved by:</strong>
+                                                            <span t-field="o.fm_app_id.name"/>
+
+                                                        </td>
+                                                        <td colspan="12" style="border: 1px solid black;">
+                                                            <strong>Received by :</strong>
+                                                            <span t-field="o.fm_app_id.name"/>
+
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="12" style="border: 1px solid black;">
+                                                            <strong>Signature:</strong>
+                                                            <span/>
+
+                                                        </td>
+                                                        <td colspan="12" style="border: 1px solid black;">
+                                                            <strong>Financial Manger’s Signature:</strong>
+
+
+                                                        </td>
+                                                        <td colspan="12" style="border: 1px solid black;">
+                                                            <strong>Signature:</strong>
+                                                            <span/>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+
+                                            </table>
+                                        </group>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

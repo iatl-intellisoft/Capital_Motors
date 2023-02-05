@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="seq_short_loan" model="ir.sequence">
+            <field name="name">Short Lone</field>
+            <field name="code">hr.loan.short</field>
+            <field name="prefix">SL NO</field>
+            <field name="padding">3</field>
+        </record>
+        <record id="seq_long_loan" model="ir.sequence">
+            <field name="name">Long Lone</field>
+            <field name="code">hr.loan.long</field>
+            <field name="prefix">LONG NO</field>
+            <field name="padding">3</field>
+        </record>
+        <record id="seq_penalty" model="ir.sequence">
+            <field name="name">Penalty</field>
+            <field name="code">penalty.no</field>
+            <field name="prefix">P NO</field>
+            <field name="padding">3</field>
+        </record>
+        <!-- HR Employee Sequence -->
+        <record id="seq_employee_codes" model="ir.sequence">
+            <field name="name">CAP</field>
+            <field name="code">employee.no</field>
+            <field name="prefix">CAP</field>
+            <field name="number_next">001</field>
+            <field name="padding">3</field>
+            <field eval="False" name="company_id"/>
+            <field name="implementation">no_gap</field>
+        </record>
+    </data>
+</odoo>

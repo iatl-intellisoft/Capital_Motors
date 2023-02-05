@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+products_alternative,product.alternative.access,model_product_alternatives,stock.group_stock_manager,1,1,1,1
+products_product_historical_cost,product.historical.cost,model_product_historical_cost,stock.group_stock_manager,1,1,1,1
+brand_brand,brand.brand,model_brand_brand,,1,1,1,1
+is_inventory_capital.access_model_model,access_model_model,is_inventory_capital.model_model_model,base.group_user,1,1,1,1
+is_inventory_capital.access_stock_search,access_stock_search,is_inventory_capital.model_stock_search,base.group_user,1,1,1,1

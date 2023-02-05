@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_hr_lta_transport_by_employees" model="ir.ui.view">
+            <field name="name">lta_transport_employees</field>
+            <field name="model">lta.transport.employees</field>
+            <field name="arch" type="xml">
+                <form string="Payslips by Employees">
+                    <group>
+                        <span colspan="4" nolabel="1">This wizard will generate payslips for all selected employee(s) based on the dates and credit note specified on Payslips Run.</span>
+                    </group>
+                    <group colspan="4">
+                        <separator colspan="4" string="Employees"/>
+                        <newline/>
+                        <field name="employee_ids" nolabel="1"/>
+                    </group>
+                    <footer>
+                        <button class="btn-primary" icon="fa-cogs" name="compute_grant_sheet" string="Generate" type="object"/>
+                        <button class="btn-secondary" special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_hr_lta_transport_by_employees" model="ir.actions.act_window">
+            <field name="name">Generate Grant</field>
+            <field name="res_model">lta.transport.employees</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_hr_lta_transport_by_employees"/>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

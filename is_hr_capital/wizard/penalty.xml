@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="penalty_create_from" model="ir.ui.view">
+            <field name="name">hr.penalty.form</field>
+            <field name="model">hr.penalties</field>
+            <field name="arch" type="xml">
+                <form string="Create Penalty">
+                    <p class="oe_grey">You are trying to Create Penalty For All Employee are you sure ?.
+                    </p>
+                    <footer>
+                        <button class="btn-primary" default_focus="1" name="Create_penalty" string="Create Penalty" type="object"/>
+                        <button class="btn-secondary" special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="penalty_create" model="ir.actions.act_window">
+            <field name="name">Create Penalty</field>
+            <field name="res_model">hr.penalties</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="hr_attendance.model_hr_attendance" />
+            <field name="binding_view_types">list,form</field>
+        </record>
+    </data>
+</odoo>

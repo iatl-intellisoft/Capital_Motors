@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_stock_valuation_layer_inherited" model="ir.ui.view">
+            <field name="name">valuation.layer</field>
+            <field name="model">stock.valuation.layer</field>
+            <field name="inherit_id" ref="stock_account.stock_valuation_layer_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='value']" position="after">
+                    <field name="value_usd"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_product_template_form_inherited" model="ir.ui.view">
+            <field name="name">product.template.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='standard_price_uom']" position="after">
+                    <field name="unit_cost_usd" string="USD Average Cost"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

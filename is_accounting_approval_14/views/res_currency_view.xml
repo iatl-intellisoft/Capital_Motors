@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Updated add arabic narration -->
+        <record model="ir.ui.view" id="inherit_res_currency_form_2">
+            <field name="name">inherit.res.currency.form.2</field>
+            <field name="model">res.currency</field>
+            <field name="inherit_id" ref="base.view_currency_form"/>
+            <field name="arch" type="xml">
+                <field name="position" position="after">
+                    <field name="narration_ar_un"/>
+                    <field name="narration_ar_cn"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

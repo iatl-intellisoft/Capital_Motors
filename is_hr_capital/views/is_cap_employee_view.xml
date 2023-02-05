@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hr_employee_search_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="replace">
+                <field filter_domain="['|',('name','ilike',self),('code','ilike',self)]" name="name" string="Employees"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_employee_form_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="after">
+                <div class="oe_title">
+                    <h1>
+                        <field name="code" placeholder="Employee Code"/>
+                    </h1>
+                </div>
+            </xpath>
+            <xpath expr="//page[@name='hr_settings']//field[@name='user_id']" position="after">
+                <field name="hiring_date" required="1"/>
+                <field name="related_partner_id"/>
+            </xpath>
+            <xpath expr="//field[@name='birthday']" position="after">
+                <field name="age"/>
+            </xpath>
+            <xpath expr="//field[@name='phone']" position="after">
+                <field name="bank_acc"/>
+            </xpath>
+        </field>
+    </record>
+    <!-- Adding Employee Account in Employee Profile -->
+ <!--    <record id="view_hr_form_inherited" model="ir.ui.view">
+        <field name="name">employee form inherited</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='phone']" position="after">
+                <field name="bank_acc"/>
+            </xpath>
+        </field>
+    </record> -->
+    <!-- Adding Employee Code in tree -->
+    <record id="view_hr_tree_inherited" model="ir.ui.view">
+        <field name="name">employee tree inherited</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="code"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

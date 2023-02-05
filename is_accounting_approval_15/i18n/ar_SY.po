@@ -1,0 +1,907 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* is_accounting_approval_12
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-19 08:59+0000\n"
+"PO-Revision-Date: 2019-05-19 11:34+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar_SY\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__mn_app_id
+msgid " Approval By"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<span>أخرى</span>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<span>اعتماد</span>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<span>تحويل</span>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<span>شيك</span>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<span>نقداً</span>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>PAYMENT APPROVAL REQUEST</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>الامضاء:</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>البنك:</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>التاريخ:</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>الرجاء التكرم بتصديق مبلغ</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>الغرض:</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>المبلغ كتابتة:</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>المدير العام:</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>المدير المالي:</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>المستفيد:</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>بند الصرف:</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>بيانات الطلب</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>طريقة السداد:</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>طلب تصديق </strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>مدير االادارة/القسم:</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>مدير الحسابات:</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>مركز التكلفة:</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+msgid "<strong>مقدم الطلب:</strong>"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model,name:is_accounting_approval_12.model_finance_approval
+msgid "A model for tracking finance approvals."
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:res.groups,name:is_accounting_approval_12.auditor_access_group
+msgid "Account Auditor"
+msgstr "Account Auditor"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__Account_No
+msgid "Account Number"
+msgstr "رقم الحساب"
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Accountant Approval"
+msgstr "تصديق المحاسب"
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Accounting Details"
+msgstr "تفاصيل الحسابات"
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Accounting Information"
+msgstr "معلومات محاسبية"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__message_needaction
+msgid "Action Needed"
+msgstr "الإجراء المطلوب"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__amount
+msgid "Amount"
+msgstr "القيمة"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__request_amount_words
+msgid "Amount in Words"
+msgstr "المبلغ بالكلمات"
+
+#. module: is_accounting_approval_12
+#: code:addons/is_accounting_approval_12/account.py:562
+#, python-format
+msgid "An issue was faced when validating!"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__analytic_account_id
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__analytic_account
+msgid "Analytic Account/Cost Center"
+msgstr "مركز التكلفة"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__approval_no
+msgid "Approval No."
+msgstr "رقم التصديق"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_res_currency__narration_ar_cn
+msgid "Arabic Narration Denomination"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_res_currency__narration_ar_un
+msgid "Arabic Narration Main"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,state:0
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Auditor Approval"
+msgstr "تصديق المراجع"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,help:is_accounting_approval_12.field_finance_approval__approval_no
+msgid "Auto-generated Approval No. for finance approvals"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__Bank_id
+msgid "Bank"
+msgstr "البنك"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__bank_journal_id
+msgid "Bank Journal"
+msgstr "يومية البنك"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__beneficiary
+msgid "Beneficiary"
+msgstr "المستفيد"
+
+#. module: is_accounting_approval_12
+#: model:account.payment.method,name:is_accounting_approval_12.account_payment_method_check_inbound
+#: model:account.payment.method,name:is_accounting_approval_12.account_payment_method_check_outbound
+msgid "Both"
+msgstr "شيك وكاش"
+
+#. module: is_accounting_approval_12
+#: selection:account.payment,state:0
+msgid "Cancelled"
+msgstr "ملغي"
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,payment_method:0
+msgid "Cash"
+msgstr "الخزنة"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__journal_id
+msgid "Cash Journal"
+msgstr "يومية"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__check_date
+msgid "Check Date"
+msgstr "تاريخ الشيك"
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Check Info"
+msgstr "معلومات الشيك"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__Check_no
+msgid "Check Number"
+msgstr "رقم الشيك"
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,payment_method:0
+msgid "Cheque"
+msgstr "شيك"
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,state:0
+msgid "Cleared"
+msgstr "تمت التسوية"
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Comments"
+msgstr "التعليقات"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__company_id
+msgid "Company"
+msgstr "المؤسسة"
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.inherit_account_voucher_payment_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__create_uid
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__create_date
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: is_accounting_approval_12
+#: model:ir.model,name:is_accounting_approval_12.model_res_currency
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__request_currency
+msgid "Currency"
+msgstr "العملة"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__custody
+msgid "Custody"
+msgstr "عهدة"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__fa_date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__department_id
+msgid "Department"
+msgstr "القسم"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__name
+msgid "Details"
+msgstr "التفاصيل"
+
+#. module: is_accounting_approval_12
+#: model:res.groups,name:is_accounting_approval_12.manager_access_group
+msgid "Direct Manager"
+msgstr "المدير المباشر"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__display_name
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: is_accounting_approval_12
+#: selection:account.payment,state:0
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: is_accounting_approval_12
+#: code:addons/is_accounting_approval_12/account.py:447
+#, python-format
+msgid "Expense Account with Check Followups not Include Supplyer selected!"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__expense_item
+msgid "Expense Item"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__exp_account
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__exp_account
+msgid "Expense or Debit Account"
+msgstr "حساب المصروف/المدين"
+
+#. module: is_accounting_approval_12
+#: code:addons/is_accounting_approval_12/account.py:444
+#, python-format
+msgid "Expense or debit account must be selected!"
+msgstr "لم يتم اختيار حساب المصروف/المدين"
+
+#. module: is_accounting_approval_12
+#: model:ir.actions.act_window,name:is_accounting_approval_12.action_fa
+#: model:ir.actions.report,name:is_accounting_approval_12.report_finance_approval_form
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__finance_id
+#: model:ir.ui.menu,name:is_accounting_approval_12.menu_fa_child
+#: model:ir.ui.menu,name:is_accounting_approval_12.menu_fa_child_child
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Finance Approval"
+msgstr "تصديق المالية"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__finance_approval_line_ids
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Finance Approval Details"
+msgstr "تفاصيل التصديق"
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Finance Approval Information"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__state
+msgid "Finance Approval Status"
+msgstr "حالة التصديق"
+
+#. module: is_accounting_approval_12
+#: model:ir.model,name:is_accounting_approval_12.model_finance_approval_line
+msgid "Finance Approval details."
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_tree
+msgid "Finance Approvals"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__fm_remarks
+msgid "Finance Man. Remarks"
+msgstr "ملاحظات المدير المالي"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__gm_app_id
+msgid "Financial  Approval By"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: selection:account.payment,state:0 selection:finance.approval,state:0
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.report_finance_approval
+#: model:mail.activity.type,name:is_accounting_approval_12.financial_approval
+msgid "Financial Approval"
+msgstr "في انتظار المدير المالي"
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Financial Approval Management"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,state:0
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.inherit_account_voucher_payment_form
+msgid "Financial Manager Approval"
+msgstr "تصديق المدير المالي"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعون (القنوات)"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__general_manager_id
+msgid "GM Approval By"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__gm_remarks
+msgid "General Man. Remarks"
+msgstr "ملاحظات المدير العام"
+
+#. module: is_accounting_approval_12
+#: model:res.groups,name:is_accounting_approval_12.general_manager_access_group
+msgid "General Manager"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: selection:account.payment,state:0
+msgid "General Manager Approval"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__id
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,help:is_accounting_approval_12.field_finance_approval__message_unread
+msgid "If checked new messages require your attention."
+msgstr "إذا حددته، سيتم إخطارك بالرسائل الجديدة."
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,help:is_accounting_approval_12.field_finance_approval__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا حددته، سيتم إخطارك بالرسائل الجديدة."
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,help:is_accounting_approval_12.field_finance_approval__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__move_id
+msgid "Journal Entry"
+msgstr "قيد يومية"
+
+#. module: is_accounting_approval_12
+#: code:addons/is_accounting_approval_12/account.py:450
+#, python-format
+msgid "Journal must be selected!"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval____last_update
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__write_uid
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__write_date
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__manager_id
+msgid "Manager"
+msgstr "المدير"
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,state:0
+msgid "Manager Approval"
+msgstr "تصديق المدير"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__au_app_id
+msgid "Manager Approval By"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__mn_remarks
+msgid "Manager Remarks"
+msgstr "ملاحظات المدير المباشر"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_res_users__approval_manager
+msgid "Manager for Approval(s)"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسائل"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__pa_name
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__pa_name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__name
+msgid "Narration"
+msgstr "البيان"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط القادم"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط القادم"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__message_has_error_counter
+msgid "Number of error"
+msgstr "عدد الاخطاء"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,help:is_accounting_approval_12.field_finance_approval__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اجراء"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,help:is_accounting_approval_12.field_finance_approval__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل مع خطأ في التسليم"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,help:is_accounting_approval_12.field_finance_approval__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,payment_method:0
+msgid "Other"
+msgstr "اخري"
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,activity_state:0
+msgid "Overdue"
+msgstr "المتبقي"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__partner_id
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__payment_method
+msgid "Payment Method"
+msgstr "طرق السداد"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__payment_method_name
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval_line__payment_method_name
+msgid "Payment Method Name"
+msgstr "طريقة الدفع"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,help:is_accounting_approval_12.field_finance_approval__bank_journal_id
+#: model:ir.model.fields,help:is_accounting_approval_12.field_finance_approval__journal_id
+msgid "Payment journal."
+msgstr "يومية الدفع"
+
+#. module: is_accounting_approval_12
+#: model:ir.model,name:is_accounting_approval_12.model_account_payment
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,activity_state:0
+msgid "Planned"
+msgstr "المخطط"
+
+#. module: is_accounting_approval_12
+#: code:addons/is_accounting_approval_12/account.py:376
+#, python-format
+msgid "Please select account!"
+msgstr "من فضلك اختر الحساب"
+
+#. module: is_accounting_approval_12
+#: selection:account.payment,state:0
+msgid "Posted"
+msgstr "تم"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: is_accounting_approval_12
+#: selection:account.payment,state:0
+msgid "Reconciled"
+msgstr "تم التسوية "
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,state:0
+msgid "Rejected"
+msgstr "رفضت"
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Remarks"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,state:0
+msgid "Request"
+msgstr "طلب"
+
+#. module: is_accounting_approval_12
+#: code:addons/is_accounting_approval_12/account.py:147
+#, python-format
+msgid "Request Amount Must be greater than zero!"
+msgstr "المبلغ المطلوب يجب ان يكون اكبر من صفر"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__request_amount
+msgid "Requested Amount"
+msgstr "المبلغ المطلوب"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__requester
+msgid "Requester"
+msgstr "الطالب"
+
+#. module: is_accounting_approval_12
+#: model:ir.ui.menu,name:is_accounting_approval_12.menu_user_requests
+msgid "Requests and Approvals"
+msgstr "التصاديق"
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.inherit_res_users_form
+msgid "Resize Signature"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_res_users__resized_user_signature
+msgid "Resized Signature"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسئول"
+
+#. module: is_accounting_approval_12
+#: selection:account.payment,state:0
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.inherit_account_voucher_payment_form
+msgid "Reviewer Approval"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__fm_app_id
+msgid "Reviewer Approval By"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__auditor_remarks
+msgid "Reviewer Remarks"
+msgstr "ملاحظات المراجع"
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Send To Accounting"
+msgstr "ارسال للحسابات"
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Send To Manager"
+msgstr "ارسال للمدير"
+
+#. module: is_accounting_approval_12
+#: selection:account.payment,state:0
+msgid "Sent"
+msgstr "تم الارسال."
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+msgid "Set to Draft"
+msgstr "تعيين كمسودة"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_res_users__user_signature
+msgid "Signature"
+msgstr "التوقيع"
+
+#. module: is_accounting_approval_12
+#: code:addons/is_accounting_approval_12/account.py:294
+#: code:addons/is_accounting_approval_12/account.py:472
+#: code:addons/is_accounting_approval_12/account.py:559
+#: code:addons/is_accounting_approval_12/account.py:566
+#: code:addons/is_accounting_approval_12/account.py:580
+#, python-format
+msgid "State Changed  Confirm -> <em>%s</em>."
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_account_payment__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,help:is_accounting_approval_12.field_finance_approval__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة على أساس الأنشطة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__partner_id
+msgid "Supplier"
+msgstr "المورد"
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,activity_state:0
+msgid "Today"
+msgstr "اليوم"
+
+#. module: is_accounting_approval_12
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_form
+#: model_terms:ir.ui.view,arch_db:is_accounting_approval_12.view_finance_approval_tree
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,payment_method:0
+msgid "Transfer"
+msgstr "تحويل"
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,payment_method:0
+msgid "Trust"
+msgstr "ثقة"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__message_unread
+msgid "Unread Messages"
+msgstr "الرسائل الجديدة"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل الجديدة"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__user_id
+msgid "User"
+msgstr "المستخدم"
+
+#. module: is_accounting_approval_12
+#: model:ir.model,name:is_accounting_approval_12.model_res_users
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: is_accounting_approval_12
+#: selection:finance.approval,state:0
+msgid "Validated"
+msgstr "تم الدفع"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__at_app_id
+msgid "Validated By"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:res.groups,name:is_accounting_approval_12.validator_access_group
+msgid "Validator"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__view_remarks
+msgid "View Remarks"
+msgstr ""
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,field_description:is_accounting_approval_12.field_finance_approval__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: is_accounting_approval_12
+#: model:ir.model.fields,help:is_accounting_approval_12.field_finance_approval__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"

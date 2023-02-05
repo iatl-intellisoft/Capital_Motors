@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- group of general manager -->
+        <record id="general_manager_access_group" model="res.groups">
+            <field name="name">General Manager</field>
+        </record>
+
+        <record id="accounting_manager_access_group" model="res.groups">
+            <field name="name">Accounting Manager</field>
+        </record>
+
+        <!-- group of auditor -->
+        <record id="auditor_access_group" model="res.groups">
+            <field name="name">Account Auditor</field>
+        </record>
+
+        <!-- group of manager approvers -->
+        <record id="manager_access_group" model="res.groups">
+            <field name="name">Direct Manager</field>
+        </record>
+
+        <!-- group of validator -->
+        <record id="validator_access_group" model="res.groups">
+            <field name="name">Validator</field>
+        </record>
+
+        <!-- Record Rules -->
+        <record id="finance_access_rule_all" model="ir.rule">
+            <field name="name">Finance Access Rule</field>
+            <field name="model_id" ref="model_finance_approval"/>
+            <!--<field name="domain_force">['|',('user_id','=',user.id),('manager_id','=',user.id)]</field>-->
+            <field name="domain_force">['&amp;', '|',('user_id','=',user.id),('manager_id','=',user.id),
+                '|',('company_id','=',False),('company_id', 'in', company_ids)]</field>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="finance_access_rule_approvers" model="ir.rule">
+            <field name="name">Finance Access Rule Approvers</field>
+            <field name="model_id" ref="model_finance_approval"/>
+            <!--<field name="domain_force">[(1,'=',1)]</field>-->
+            <field name="domain_force">['&amp;',(1,'=',1),'|',
+                ('company_id','=',False),('company_id', 'in', company_ids)]</field>
+            <field name="groups"
+                   eval="[(4, ref('is_accounting_approval_15.auditor_access_group')),
+                   (4, ref('is_accounting_approval_15.validator_access_group')),
+                   (4, ref('account.group_account_manager')),
+                   (4, ref('is_accounting_approval_15.general_manager_access_group'))]"/>
+        </record>
+    </data>
+</odoo>

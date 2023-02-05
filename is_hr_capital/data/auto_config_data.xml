@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_holiday_emergency" model="hr.leave.type">
+            <field name="name">Emergency Leave</field>
+            <field name="color_name">violet</field>
+            <field name="active">True</field>
+            <field name="type_id">emergency</field>
+            <!--<field name="domain_force">[('hidden','=',True)]</field>-->
+            <field name="double_validation">True</field>
+        </record>
+        <!--<record id="hr_holiday_unpaid" model="hr.leave.type">-->
+        <!--<field name="name">Unpaid Leave </field>-->
+        <!--<field name="color_name">ivory</field>-->
+        <!--<field name="active">True</field>-->
+        <!--<field name="type_id">unpaid</field>-->
+        <!--<field name="double_validation">True</field>-->
+        <!--</record>-->
+        <record id="hr_holiday_haj_leave" model="hr.leave.type">
+            <field name="name">Haj Leave</field>
+            <field name="color_name">ivory</field>
+            <field name="active">True</field>
+            <field name="type_id">haj</field>
+            <field name="double_validation">True</field>
+        </record>
+        <record id="hr_holiday_maternity" model="hr.leave.type">
+            <field name="name">Maternity Leave</field>
+            <field name="color_name">violet</field>
+            <field name="active">True</field>
+            <field name="type_id">maternity</field>
+            <!--<field name="domain_force">[('hidden','=',True)]</field>-->
+            <field name="double_validation">True</field>
+        </record>
+        <record id="hr_holiday_injury" model="hr.leave.type">
+            <field name="name">Employment Injury Leave</field>
+            <field name="color_name">violet</field>
+            <field name="type_id">injury</field>
+            <field name="active">True</field>
+            <!--<field name="domain_force">[('hidden','=',True)]</field>-->
+            <field name="double_validation">True</field>
+        </record>
+        <!--<record id="hr_holidays.holiday_status_cl" model="hr.leave.type">-->
+        <!--<field name="name" eval="'Legal Leaves'"/>-->
+        <!--</record>-->
+        <record id="hr_holidays.holiday_status_sl" model="hr.leave.type">
+            <field name="type_id">sick</field>
+        </record>
+        <record id="hr_holidays.holiday_status_unpaid" model="hr.leave.type">
+            <field name="type_id">unpaid</field>
+        </record>
+    </data>
+</odoo>

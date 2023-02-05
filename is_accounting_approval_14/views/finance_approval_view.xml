@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form view of Finance Approval -->
+        <record id="view_finance_approval_form" model="ir.ui.view">
+            <field name="name">finance.approval.form</field>
+            <field name="model">finance.approval</field>
+            <field name="arch" type="xml">
+                <form string="Finance Approval Information">
+                    <header>
+                        <button name="to_approve" type="object"
+                                string="Department Approved" states="department_approval" class="oe_highlight"
+                                groups="is_accounting_approval_14.manager_access_group"/>
+                        <button name="department_approval" type="object"
+                                string="To Approve" states="draft" class="oe_highlight" groups="base.group_user"/>
+                        <button name="financial_approval" type="object"
+                                string="Finance Approved" states="to_approve" class="oe_highlight"
+                                groups="account.group_account_manager"/>
+                        <button name="gm_approval" type="object"
+                                string="GM Approved" states="gm_approval" class="oe_highlight"
+                                groups="is_accounting_approval_14.general_manager_access_group"/>
+                        <button name="reject" type="object"
+                                string="Reject" states="to_approve" class="oe_highlight"
+                                groups="account.group_account_manager"/>
+                        <button name="reject" type="object"
+                                string="Reject" class="oe_highlight" states="gm_app"
+                                groups="is_accounting_approval_14.general_manager_access_group"/>
+                        <button name="validate" type="object"
+                                string="Validate" states="ready" class="oe_highlight"
+                                groups="is_accounting_approval_14.validator_access_group"/>
+                        <button name="set_to_draft" type="object"
+                                string="Set to Draft" states="department_approval,to_approve,gm_app"
+                                class="oe_highlight"
+                                groups="account.group_account_manager"/>
+                        <button name="cancel_button" type="object"
+                                string="Cancel" states="validate" class="oe_highlight"
+                                groups="account.group_account_manager"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet string="Financial Approval Management">
+                        <group colspan="4" col="4" string="General Info">
+                            <field name="fa_date" attrs="{'readonly':[('state','in',['validate'])]}"/>
+                            <field name="approval_no" readonly="1"/>
+                            <field name="request_currency" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                            <field name="department_id" attrs="{'readonly':[('state','not in',['draft'])]}"
+                                   widget="selection"/>
+                            <field name="admin_finance"/>
+                            <field name="analytic_account"
+                                   attrs="{'readonly':[('state','=','validate')]}"
+                                   widget="selection"/>
+                        </group>
+
+                        <group colspan="4" col="4" string="Request Info">
+                            <field name="requester" default_focus="1"
+                                   attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                            <field name="request_amount" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                            <field name="request_amount_words" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                            <field name="beneficiary" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                        </group>
+
+                        <group colspan="4" string="Reason">
+                            <field name="reason" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                            <field name="gm_approvement" attrs="{'readonly':[('state','not in',['draft'])]}"/>
+                        </group>
+
+                        <group colspan="4" string="Comments">
+                            <field name="mn_remarks" attrs="{'readonly':[('state','in',['validate'])]}"
+                                   groups="is_accounting_approval_14.manager_access_group"/>
+                            <field name="auditor_remarks" attrs="{'readonly':[('state','in',['validate'])]}"
+                                   groups="is_accounting_approval_14.auditor_access_group"/>
+                            <field name="fm_remarks" attrs="{'readonly':[('state','in',['validate'])]}"
+                                   groups="account.group_account_manager"/>
+                            <field name="gm_remarks" attrs="{'readonly':[('state','in',['validate'])]}"
+                                   groups="is_accounting_approval_14.general_manager_access_group"/>
+                        </group>
+                        <group colspan="2" string="Check Info">
+                            <field name="payment_method_name" invisible="1"/>
+                            <field name="check_no"
+                                   attrs="{'invisible':[('payment_method_name','!=','Checks')],'required':[('payment_method_name','=','Checks')],'readonly':[('state','=','validate')]}"/>
+                            <!-- <field name="check_bank_name"
+                                attrs="{'invisible':[('payment_method_name','!=','Checks')],'required':[('payment_method_name','=','Checks')],'readonly':[('state','=','validate')]}"/> -->
+                            <!-- <field name="check_bank_branch"
+                                attrs="{'invisible':[('payment_method_name','!=','Checks')],'required':[('payment_method_name','=','Checks')],'readonly':[('state','=','validate')]}"/> -->
+                            <field name="check_date"
+                                   attrs="{'invisible':[('payment_method_name','!=','Checks')],'required':[('payment_method_name','=','Checks')],'readonly':[('state','=','validate')]}"/>
+                        </group>
+                        <notebook>
+                            <page string="Remarks">
+                                <group string="Remarks" colspan="4" col="4">
+                                    <field name="view_remarks"/>
+                                </group>
+                            </page>
+                            <page string="Finance Approval Details" attrs="{'invisible':[('state','not in',['ready'])]}">
+                                <field name="finance_approval_line_ids"
+                                       attrs="{'readonly':[('state','in',['done'])]}"
+                                       nolabel="1" context="{'default_name': reason, 'default_amount': request_amount}">
+                                    <tree editable="bottom">
+                                        <field name="name" />
+                                        <field name="amount" sum="Total" />
+                                        <field name="exp_account" groups="account.group_account_user,account.group_account_manager" />
+                                        <field name="notes" />
+                                    </tree>
+                                </field>
+
+                            </page>
+                            <page string="Accounting Details">
+                                <group colspan="4" col="4">
+<!--                                    <field name="exp_account"-->
+<!--                                           attrs="{'required':[('state','=','ready')], 'readonly':[('state','in',['draft','gm_approval','validate'])]}"/>-->
+
+                                    <field name="payment_method" widget="selection"
+                                           domain="[('payment_type','=','outbound')]"
+                                           attrs="{'invisible':[('state','in',['draft'])] ,'required':[('state','=','ready')],'readonly':[('state','in',['draft','gm_approval','validate'])]}"/>
+                                    <field name="journal_id"
+                                           attrs="{'invisible':[('state','in',['draft'])],'required':[('state','=','ready')], 'readonly':[('state','in',['draft','gm_approval','validate'])]}"/>
+
+                                    <field name="partner_id" attrs="{'readonly':[('state','in',['validate','gm_approval'])]}"/>
+                                    <field name="move_id" attrs="{'invisible':[('state','not in',['validate'])]}" context="{'form_view_ref':'account.view_move_form'}"/>
+<!--                                    <field name="payment_id"/>-->
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view of Finance Approval -->
+        <record id="view_finance_approval_tree" model="ir.ui.view">
+            <field name="name">view.finance.approval.tree</field>
+            <field name="model">finance.approval</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!--                <tree string="Finance Approvals" default_order="fa_date,id"-->
+                    <!--                      colors="blue:state=='draft';red:state=='reject';green:state=='validate';orange:state=='au_app';purple:state=='fm_app';navy:state=='gm_app'">-->
+                    <field name="approval_no"/>
+                    <field name="name"/>
+                    <field name="manager_id"/>
+                    <field name="fa_date"/>
+                    <field name="request_amount" sum="Total"/>
+                    <field name="request_currency" sum="Total"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Search view of Finance Approval -->
+        <record id="view_finance_approval_search" model="ir.ui.view">
+            <field name="name">view.finance.approval.search</field>
+            <field name="model">finance.approval</field>
+            <field name="arch" type="xml">
+                <search string="Finance Approval">
+                    <field name="approval_no"/>
+                    <field name="fa_date"/>
+                    <field name="requester"/>
+                    <field name="manager_id"/>
+                    <field name="request_amount"/>
+                    <field name="beneficiary"/>
+                    <field name="state"/>
+                    <group string="Filter By">
+                        <filter name="by_today" string="Today"
+                                domain="[('fa_date','=',time.strftime('%%Y-%%m-%%d'))]"/>
+                    </group>
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_state" string="State" context="{'group_by':'state'}"/>
+                        <filter name="group_by_date" string="Financial Approval Date" domain="[]"
+                                context="{'group_by':'fa_date'}"/>
+                        <filter name="group_by_exp_account" string="Expense or Debit Account" domain="[]"
+                                context="{'group_by':'exp_account'}"/>
+                        <filter name="group_by_user" string="User" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter name="group_by_payment_method" string="Payment Method" domain="[]"
+                                context="{'group_by':'payment_method'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Action of Financial Approval System -->
+        <record id="action_fa" model="ir.actions.act_window">
+            <field name="name">Finance Approval</field>
+            <field name="res_model">finance.approval</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_by_today':1,}</field>
+        </record>
+
+        <!-- Menu of Financial Approval System -->
+        <menuitem id="menu_user_requests"
+                  name="Requests and Approvals" sequence="1"
+                  web_icon="is_accounting_approval_14,static/description/images2.png"/>
+        <menuitem id="menu_fa_child" parent="menu_user_requests"
+                  name="Finance Approval"/>
+        <menuitem id="menu_fa_child_child" parent="menu_fa_child"
+                  name="Finance Approval" action="action_fa"/>
+        <record id="menu_fa_child_child" model="ir.ui.menu">
+            <!-- Use the special many2many value syntax to add a child record,
+                 and the `ref()` method to resolve the group XML ID -->
+            <field name="groups_id" eval="[(4, ref('base.group_user')),]"/>
+        </record>
+    </data>
+</odoo>

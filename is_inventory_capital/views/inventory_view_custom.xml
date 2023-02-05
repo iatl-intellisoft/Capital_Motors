@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="inherited_view_product_product_form1" model="ir.ui.view">
+            <field name="name">inherited.view.product.product</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="after">
+                    <field attrs="{'required':[('type','=','product')]}" name="product_brand"/>
+                    <field name="az_margin"/>
+                </xpath>
+                <xpath expr="//div[@name='options']" position="inside">
+                    <div>
+                        <field name="is_car"/>
+                        <label for="is_car"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+        <record id="inherited_view_product_template_form1" model="ir.ui.view">
+            <field name="name">inherited.view.product.product</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='detailed_type']" position="after">
+                    <field attrs="{'required':[('detailed_type','=','product')]}" name="product_brand"/>
+                    <field name="az_margin"/>
+                </xpath>
+                <xpath expr="//div[@name='options']" position="inside">
+                    <div>
+                        <field name="is_car"/>
+                        <label for="is_car"/>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='product_brand']" position="after">
+                    <field attrs="{'invisible':[('is_car','=',False)]}" name="model_year"/>
+                </xpath>
+                <xpath expr="//field[@name='product_brand']" position="after">
+                    <field name="model"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="model_brand_view_tree" model="ir.ui.view">
+            <field name="name">fleet.vehicle.model.brand.tree</field>
+            <field name="model">brand.brand</field>
+            <field name="arch" type="xml">
+                <tree string="Model Make">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="model_brand_view_form" model="ir.ui.view">
+            <field name="name">model.brand.form</field>
+            <field name="model">brand.brand</field>
+            <field name="arch" type="xml">
+                <form string="Model Make">
+                    <sheet>
+                        <group>
+                            <div>
+                                <field class="oe_avatar" name="image_128" widget="image"/>
+                                <label class="oe_edit_only" for="name"/>
+                                <h1>
+                                    <field name="name"/>
+                                </h1>
+                            </div>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="model_brand_action" model="ir.actions.act_window">
+            <field name="name">Brand</field>
+            <field name="res_model">brand.brand</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create a new manufacturer
+                </p>
+            </field>
+        </record>
+        <!-- adding Model view -->
+        <record id="model_model_view_tree" model="ir.ui.view">
+            <field name="name">model.model.brand.tree</field>
+            <field name="model">model.model</field>
+            <field name="arch" type="xml">
+                <tree string="Model Make">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="model_model_view_form" model="ir.ui.view">
+            <field name="name">model.model.form</field>
+            <field name="model">model.model</field>
+            <field name="arch" type="xml">
+                <form string="Model Make">
+                    <sheet>
+                        <group>
+                            <div>
+                                <label class="oe_edit_only" for="name"/>
+                                <h1>
+                                    <field name="name"/>
+                                </h1>
+                            </div>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="model_model_action" model="ir.actions.act_window">
+            <field name="name">Model</field>
+            <field name="res_model">model.model</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create a new Model
+                </p>
+            </field>
+        </record>
+        <!--        <record id="cron_scheduler_for_landed_cost" model="ir.cron">-->
+        <!--            <field name="name">Landed cost automation</field>-->
+        <!--            <field name="model_id" ref="is_inventory_capital.model_stock_scrap"/>-->
+        <!--            <field name="state">code</field>-->
+        <!--            <field name="code">model.auto_landed_cost()</field>-->
+        <!--            <field name="active" eval="True"/>-->
+        <!--            <field name="user_id" ref="base.user_root"/>-->
+        <!--            <field name="interval_number">1</field>-->
+        <!--            <field name="interval_type">minutes</field>-->
+        <!--            <field name="numbercall">-1</field>-->
+        <!--            <field name="doall" eval="False"/>-->
+        <!--        </record>-->
+        <!--        <record model="product.product" id="product_product_11109613400">-->
+        <!--            <field name="name">Scrap</field>-->
+        <!--            <field name="type">product</field>-->
+        <!--            <field name="categ_id" ref="product.product_category_all"/>-->
+        <!--        </record>-->
+        <menuitem action="model_brand_action" id="model_brand_menu" name="Brand" parent="stock.menu_stock_config_settings" sequence="2"/>
+        <menuitem action="model_model_action" id="model_model_menu" name="Model" parent="stock.menu_stock_config_settings" sequence="2"/>
+        <!-- <record id="view_removing_route" model="ir.ui.view">
+            <field name="name">view.removing.route</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="stock.product_template_form_view_procurement_button"/>
+            <field name="arch" type="xml"> -->
+                <!--            <xpath expr="//button[@name='action_stock_rules_report']" position="replace"></xpath>-->
+                <!-- <button name="%(stock.action_stock_rules_report)d" position="replace"/>
+            </field>
+        </record> -->
+    </data>
+</odoo>

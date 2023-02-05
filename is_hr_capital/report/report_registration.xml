@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="contract_report" model="ir.actions.report">
+            <field name="name">Contract</field>
+            <field name="model">hr.contract</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">is_hr_capital.employee_contact</field>
+            <field name="report_file">is_hr_capital.employee_contact</field>
+            <!-- <field name="binding_model_id" ref="hr.model_hr_contract"/> -->
+            <!-- <field name="binding_type">report</field> -->
+        </record>
+        <!-- <report file="is_hr_capital.employee_contact" id="contract_report" model="hr.contract" name="is_hr_capital.employee_contact" report_type="qweb-pdf" string="Contract"/> -->
+    </data>
+</odoo>

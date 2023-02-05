@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_emp_support,access.emp.support,model_emp_support,,1,1,1,1
+access_office_maintenance,access.office.maintenance,model_office_maintenance,,1,1,1,1
+access_saturday_work,access.saturday.work,model_saturday_work,,1,1,1,1
+access_hr_emp,access.hr.emp,model_hr_emp,,1,1,1,1
+
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_lta_report" model="ir.ui.view">
+            <field name="name">wizard.lta.transport.form</field>
+            <field name="model">wizard.lta.transport</field>
+            <field name="arch" type="xml">
+                <form string="LTA and Transport">
+                    <group>
+                        <group>
+                            <field name="from_date"/>
+                        </group>
+                        <group>
+                            <field name="to_date"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button class="btn-primary" name="print_report" string="Print" type="object"/>
+                        <button class="btn-secondary" special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_lta_report_excel" model="ir.actions.act_window">
+            <field name="name">Lta and Transport Report</field>
+            <field name="res_model">wizard.lta.transport</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <record id="view_lta_excel" model="ir.ui.view">
+            <field name="name">view.lta.transport.excel</field>
+            <field name="model">lta.transport.excel</field>
+            <field name="arch" type="xml">
+                <form string="File to Downloads">
+                    <field invisible="1" name="name"/>
+                    <field filename="name" name="file_download"/>
+                </form>
+            </field>
+        </record>
+        <menuitem action="action_lta_report_excel" groups="hr.group_hr_manager" id="menu_lta_report" name="LTA and Transport" parent="hr_payroll.menu_hr_payroll_report" sequence="10"/>
+    </data>
+</odoo>

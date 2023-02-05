@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_finance_approval">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <table class="table" style="direction: rtl; margin-top: -120px">
+                                <tr class="text-center">
+                                    <td colspan="12" >
+                                        <u>
+                                            <strong>ســــند صـرف</strong>
+                                        </u>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1 px solid black;">
+                                        <strong>رقم الســـند</strong>
+                                    </td>
+                                    <td style="border: 1 px solid black;" class="text-center">
+                                        <span t-field="o.approval_no"/>
+                                    </td>
+                                    <td style="border: 1 px solid black;">
+                                        <strong>التاريخ:</strong>
+                                    </td>
+                                    <td style="border: 1 px solid black;" class="text-center">
+                                        <span t-field="o.fa_date"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1 px solid black;">
+                                        <strong>مقدم الطلب:</strong>
+                                    </td>
+                                    <td style="border: 1 px solid black;" class="text-center"
+                                        colspan="3">
+                                        <span t-field="o.requester"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1 px solid black;">
+                                        <strong>المستلم:</strong>
+                                    </td>
+                                    <td style="border: 1 px solid black;" class="text-center"
+                                        colspan="3">
+                                        <span t-field="o.partner_id.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1 px solid black;">
+                                        <strong> الرجاء التكرم بتصديق مبلغ :  </strong>
+                                    </td>
+                                    <td style="border: 1 px solid black;" class="text-center"
+                                        colspan="2">
+                                        <t t-esc="'{0:,.2f}'.format(o.request_amount)"/>
+                                    </td>
+                                    <td style="border: 1 px solid black;" class="text-center">
+                                        <strong><span t-field="o.request_currency.narration_ar_un"/></strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1 px solid black;">
+                                        <strong>المبلغ كتابتة:</strong>
+                                    </td>
+                                    <td style="border: 1 px solid black;" class="text-center"
+                                        colspan="3">
+                                        <span t-field="o.request_amount_words"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1 px solid black;">
+                                        <strong>الغرض:</strong>
+                                    </td>
+                                    <!--                                                </tr>-->
+                                    <!--                                                <tr>-->
+                                    <td style="border: 1 px solid black;" class="text-center" colspan="3">
+                                        <span t-field="o.reason"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1 px solid black;">
+                                        <strong>مدفوع من :</strong>
+                                    </td>
+                                    <td style="border: 1 px solid black;" class="text-center"
+                                        colspan="3">
+                                        <span t-field="o.journal_id.name"/>
+                                    </td>
+                                </tr>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <tr>
+                                    <td  style="border: 1 px solid black;" class="text-center">
+                                        <strong> مدير اﻵدارة :</strong><img t-if="o.manager_id.user_signature" t-att-src="image_data_uri(o.manager_id.user_signature)" style="max-height:130px;max-width:80px"/>
+                                    </td>
+                                    <td  style="border: 1 px solid black;" class="text-center">
+                                         <strong>مدير الحسابات :</strong><img t-if="o.fc_app_id.user_signature" t-att-src="image_data_uri(o.fc_app_id.user_signature)" style="max-height:130px;max-width:80px"/>
+
+                                    </td>
+<!--                                    <td style="border: 1 px solid black;" class="text-left">-->
+<!--                                        <span t-field="o.gm_app_id.name"  style="border: 1 px solid black;" class="text-left"/>-->
+<!--                                        &lt;!&ndash;                                                    <strong>General Manager:</strong>&ndash;&gt;-->
+<!--                                        <img t-if="o.gm_app_id.user_signature" t-att-src="image_data_uri(o.gm_app_id.user_signature)" style="max-height:130px;max-width:80px"/>-->
+<!--                                    </td>-->
+<!--                                    <td  style="border: 1 px solid black;" class="text-left">-->
+<!--                                        <span t-field="o.fc_app_id.name"  style="border: 1 px solid black;" class="text-left"/>-->
+<!--                                        <img t-if="o.fc_app_id.user_signature" t-att-src="image_data_uri(o.fc_app_id.user_signature)" style="max-height:130px;max-width:80px"/>-->
+<!--                                    </td>-->
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_custom_report,account.custom.report,model_account_custom_report,hr.group_hr_manager,1,1,1,1
+access_account_report_excel,access_account_report_excel,is_capital_accounting_13.model_account_report_excel,base.group_user,1,1,1,1

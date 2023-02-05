@@ -1,0 +1,61 @@
+<odoo>
+    <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="payment_inherit">
+      <field name="name">payment_form_inherit</field>
+      <field name="model">account.payment</field>
+      <field name="inherit_id" ref="account.view_account_payment_form"/>
+      <field name="arch" type="xml">
+        <field name="payment_method_line_id" position="after">
+              <field name="check_type"  widget="radio" attrs="{'invisible': [ ('payment_method_id.code','!=','check_printing')]}"/>
+              <field name="return_check_move_id" attrs="{'invisible':[('return_check_move_id','=',False)]}"/>
+          </field>
+        <field name="state" position="before">
+          <button name="clear_check" string="Clear check" type="object" class="btn btn-secondary" attrs="{'invisible': ['|','|',('state', 'not in', ('posted')),('check_type','!=','outstand'),('cleared', '=', True)]}"/>
+        </field>
+          <field name="id" position="before">
+              <field name="cleared" invisible="1"/>
+                <widget name="web_ribbon" title="Check Cleared" attrs="{'invisible': ['|', ('state', '!=', 'posted'), ('cleared', '=', False)]}"/>
+          </field>
+          <!--add check clearance date-->
+          <field name="ref" position="after">
+              <field name="clearance_date" attrs="{'invisible': ['|', ('payment_method_id.code', '!=', 'check_printing'), ('check_type', '!=', 'outstand')],'required': [ ('payment_method_id.code', '=', 'check_printing'), ('check_type', '=', 'outstand')]}"/>
+          </field>
+            <xpath expr="//sheet/div[@name='button_box']" position="attributes">
+                <attribute name="style">padding-right:40mm</attribute>
+            </xpath>
+      </field>
+    </record>
+    </data>
+
+    <!--check search view-->
+    <record id="view_check_filter" model="ir.ui.view">
+            <field name="name">payment_check_search</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_search"/>
+            <field name="arch" type="xml">
+                <!--<search string="Checks">-->
+                    <filter name="transfers_filter" position="before">
+                    <filter string="Checks To Clear" name="due_check" domain="[('clearance_date', '=',   time.strftime('%Y-%m-%d')),('cleared','=',False),('partner_type', '=', 'customer'),('check_type','=','outstand')]"/>
+                    <filter string="Customer Due Checks" name="due_check" domain="[('clearance_date', '&lt;',   time.strftime('%Y-%m-%d')),('cleared','=',False),('partner_type', '=', 'customer'),('check_type','=','outstand')]"/>
+                    <filter string="Vendor Due Checks" name="ven_due_check" domain="[('clearance_date', '&lt;',   time.strftime('%Y-%m-%d')),('cleared','=',False),('partner_type', '=', 'supplier'),('check_type','=','outstand')]"/>
+                    </filter>
+                <!--</search>-->
+            </field>
+     </record>
+    <!-- add check No to payment Register wizard form-->
+    <record id="account_payment_register_form_inherit22" model="ir.ui.view">
+      <field name="name">account.payment.register.wizard.form</field>
+      <field name="model">account.payment.register</field>
+      <field name="inherit_id" ref="account.view_account_payment_register_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='payment_method_line_id']" position="after">
+          <field name="payment_method_code" invisible="1"/>
+          <field name="check_type"  widget="radio" attrs="{'invisible': [ ('payment_method_code','!=','check_printing')]}"/>
+          <field name="clearance_date" attrs="{'invisible': ['|', ('payment_method_code', '!=', 'check_printing'), ('check_type', '!=', 'outstand')],'required': [ ('payment_method_code', '=', 'check_printing'), ('check_type', '=', 'outstand')]}"/>
+        </xpath>
+      </field>
+    </record>
+
+</odoo>

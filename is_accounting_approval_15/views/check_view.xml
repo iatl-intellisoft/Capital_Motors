@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <!-- action for the supplier -->
+        <record model="ir.actions.act_window" id="check_followups_approval">
+            <field name="name">Check Followups</field>
+            <field name="res_model">check_followups.check_followups</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('approval_check','=',True)]</field>
+        </record>
+        <record model="ir.actions.act_window.view" id="action_approval_view_tree">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="ii_check_management_15.check_followups_list"/>
+            <field name="act_window_id" ref="check_followups_approval"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="action_approval_view_form">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="ii_check_management_15.check_followups_form"/>
+            <field name="act_window_id" ref="check_followups_approval"/>
+        </record>
+        <menuitem name="Finance Approval Checks" id="check_followups_approval_id" action="check_followups_approval" parent="is_accounting_approval_15.menu_fa_child" groups="account.group_account_user,account.group_account_manager"  sequence="3"/>
+    </data>
+</odoo>

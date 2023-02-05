@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Updated to add approvals manager and signature-->
+        <record model="ir.ui.view" id="inherit_res_users_form">
+            <field name="name">inherit.res.users.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" postion="inside">
+                    <button name="resize_signature" string="Resize Signature" type="object" class="oe_highlight"/>
+                </xpath>
+                <page name="preferences" position="after">
+                    <page string="Signature">
+                        <group>
+                            <group>
+                                <field name="approval_manager"/>
+                                <field name="user_signature" widget="image" readonly="0" class="oe_avatar"/>
+                            </group>
+                            <group>
+                                <field name="resized_user_signature" widget="image" readonly="0" class="oe_avatar"/>
+                            </group>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+    </data>
+</odoo>

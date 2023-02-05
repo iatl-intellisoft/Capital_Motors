@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="overtime_config_tree" model="ir.ui.view">
+            <field name="name">overtime.setting.tree</field>
+            <field name="model">overtime.setting</field>
+            <field name="arch" type="xml">
+                <tree string="Overtime Settings">
+                    <field name="name"/>
+                    <field name="normal_hours" widget="float_time"/>
+                    <field name="holiday_hours" widget="float_time"/>
+                    <field name="days_employee"/>
+                </tree>
+            </field>
+        </record>
+        <record id="overtime_config_form" model="ir.ui.view">
+            <field name="name">overtime.setting.form</field>
+            <field name="model">overtime.setting</field>
+            <field name="arch" type="xml">
+                <form string="Overtime Settings">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="normal_hours" widget="float_time"/>
+                                <field name="days_employee"/>
+                            </group>
+                            <group>
+                                <field name="holiday_hours" widget="float_time"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="action_overtime_config" model="ir.actions.act_window">
+            <field name="name">Overtime Settings</field>
+            <field name="res_model">overtime.setting</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem action="action_overtime_config" id="menu_overtime_configuration" name="Overtime Settings" parent="hr.menu_human_resources_configuration" sequence="40"/>
+        <record id="view_payroll_calculation_tree" model="ir.ui.view">
+            <field name="name">payroll.calculation.tree</field>
+            <field name="model">payroll.calculation</field>
+            <field name="arch" type="xml">
+                <tree string="Payroll Calculation Settings">
+                    <field name="name"/>
+                    <field name="cola"/>
+                    <field name="housing"/>
+                    <field name="transportation"/>
+                    <field name="employee_basic"/>
+                    <field name="official_Sal"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_payroll_calculation_form" model="ir.ui.view">
+            <field name="name">payroll.calculation.form</field>
+            <field name="model">payroll.calculation</field>
+            <field name="arch" type="xml">
+                <form string="Payroll Calculation Settings">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="cola"/>
+                                <field name="transportation"/>
+                                <field name="official_Sal"/>
+                            </group>
+                            <group>
+                                <field name="housing"/>
+                                <field name="employee_basic"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="action_payroll_calculation" model="ir.actions.act_window">
+            <field name="name">Payroll Calculation</field>
+            <field name="res_model">payroll.calculation</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem action="action_payroll_calculation" id="menu_payroll_calculation" name="Payroll Calculation Settings" parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration" sequence="50"/>
+    </data>
+</odoo>

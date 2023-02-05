@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_custom_account_report" model="ir.ui.view">
+            <field name="name">account.report.form</field>
+            <field name="model">account.custom.report</field>
+            <field name="arch" type="xml">
+                <form string="Account Report">
+                    <group>
+                        <group>
+                            <field name="account"/>
+                        </group>
+                        <group>
+                            <field name="partner"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button class="btn-primary" name="print_report" string="Print" type="object"/>
+                        <button class="btn-secondary" special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="view_account_report_report_excel" model="ir.ui.view">
+            <field name="name">account.report.excel</field>
+            <field name="model">account.report.excel</field>
+            <field name="arch" type="xml">
+                <form string="File to Downloads">
+                    <field invisible="1" name="name"/>
+                    <field filename="name" name="file_download"/>
+                </form>
+            </field>
+        </record>
+        <record id="action_account_report_excel" model="ir.actions.act_window">
+            <field name="name">Partner Report</field>
+            <field name="res_model">account.custom.report</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem action="action_account_report_excel" groups="account.group_account_manager" id="menu_account_partner_reports" name="Account Partner Report" parent="account.account_reports_management_menu" sequence="5"/>
+    </data>
+</odoo>

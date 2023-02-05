@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <template id="employee_contact">
+            <!-- predefined, t-call call existing functionality -->
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div class="oe_structure">
+                                <div class="row row-centered">
+                                    <div class="col-md-12 col-centered">
+                                        <group string="">
+                                            <table class="table">
+                                                <tr class="text-center">
+                                                    <td colspan="12" style="border: 1px solid white;">
+                                                        <h4>
+                                                            <strong>قسم شئون الأفراد</strong>
+                                                        </h4>
+                                                    </td>
+                                                </tr>
+                                                <tr class="text-center">
+                                                    <td colspan="12" style="border: 1px solid white;">
+                                                        <h4>
+                                                            <strong>عقد عمل مسمي الاجل</strong>
+                                                        </h4>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>
+                                                            ابرم هذا العقد بين كل من شركة كابيتال للسيارات المحدودة
+                                                            الموقع: المجاهدين شارع مدني تقاطع الستين
+                                                        </strong>
+                                                        <span style="border: 1 px solid white; text-align: right;"
+                                                              t-field="o.employee_id"/>
+                                                        <strong>والسيد/السيدة</strong>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"
+                                                        style="direction: rtl;text-align: right ; border: 1px solid whit;">
+                                                        <strong>(ويشار اليه/اليها لأغراض هذا العقد بالطرف الثاني)
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <table class="table">
+                                                    <tr>
+                                                        <td colspan="12"
+                                                            style="border: 1 px solid white; text-align: right;">
+                                                            <strong>تاريخ الميلاد</strong>
+                                                            <span t-field="o.employee_id.birthday"/>
+
+                                                        </td>
+                                                        <td colspan="12"
+                                                            style="border: 1 px solid white; text-align: right;">
+                                                            <span t-field="o.employee_id.address_home_id"/>
+                                                            <strong>العنوان</strong>
+                                                        </td>
+                                                        <td colspan="12"
+                                                            style="border: 1 px solid white; text-align: right;">
+                                                            <span t-field="o.employee_id.country_id"/>
+                                                            <strong>الجنسية</strong>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <table class="table">
+                                                    <tr>
+                                                        <td colspan="12"
+                                                            style="border: 1 px solid white; text-align: right;">
+                                                            <strong></strong>
+                                                            <span/>
+                                                        </td>
+                                                         <td colspan="12"
+                                                            style="border: 1 px solid white; text-align: right;">
+                                                            <strong></strong>
+                                                            <span/>
+                                                        </td>
+                                                        <td colspan="12"
+                                                            style="border: 1 px solid white; text-align: right;">
+                                                            <strong>وافق الطرف الأول على تعيين الطرف الثاني في وظيفة
+                                                            </strong>
+                                                            <span t-field="o.employee_id.job_id"/>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="12"
+                                                            style="border: 1 px solid white; text-align: right;">
+                                                            <strong>وتنتهي في</strong>
+                                                            <span t-field="o.date_end"/>
+                                                        </td>
+                                                        <td colspan="12"
+                                                            style="border: 1 px solid white; text-align: right;">
+                                                            <strong>تبدأ من التاريخ</strong>
+                                                            <span t-field="o.date_start"/>
+                                                        </td>
+                                                        <td colspan="12"
+                                                            style="border: 1 px solid white; text-align: right;">
+                                                            <strong>مدة هذا العقد</strong>
+<!--                                                            <span t-field="o.contract_period "/>-->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </table>
+                                            <table class="table">
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>تعتبر الثلاثة أشهر الأولي من العقد فترة تجريبيه يجوز لأي
+                                                            من الطرفين انهائها بموجب المادة 50
+                                                        </strong>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>اتفق الطرفان علي ان تكون ألاجرة الشهرية مبلغ وقدره
+                                                            تفاصيلة كالاتي
+                                                        </strong>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table class="table">
+                                                <tr style="direction: rtl;text-align: right ; border: 1px solid black; ">
+
+                                                    <td colspan="2"
+                                                        style="direction: rtl;text-align: right ; border: 1px solid black;">
+                                                        <span t-field="o.basic"/>
+                                                    </td>
+                                                    <td colspan="3"
+                                                        style="direction: rtl;text-align: right ; border: 1px solid black;">
+                                                        <strong>المرتب الاساسي</strong>
+                                                    </td>
+                                                </tr>
+                                                <tr style="direction: rtl;text-align: right ; border: 1px solid black;">
+
+                                                    <td colspan="2"
+                                                        style="direction: rtl;text-align: right ; border: 1px solid black;">
+                                                        <span t-field="o.cola_allowance"/>
+                                                    </td>
+                                                    <td colspan="3"
+                                                        style="direction: rtl;text-align: right ; border: 1px solid black;">
+                                                        <strong>بدل غلاء المعيشة</strong>
+                                                    </td>
+                                                </tr>
+                                                <tr style="direction: rtl;text-align: right ; border: 1px solid black;">
+                                                    <td colspan="2"
+                                                        style="direction: rtl;text-align: right ; border: 1px solid black;">
+                                                        <span t-field="o.transportation_allowance"/>
+                                                    </td>
+                                                    <td colspan="3"
+                                                        style="direction: rtl;text-align: right ; border: 1px solid black;">
+                                                        <strong>علاوة بدل ترحيل</strong>
+                                                    </td>
+                                                </tr>
+                                                <tr style="direction: rtl;text-align: right ; border: 1px solid black;">
+                                                    <td colspan="2"
+                                                        style="direction: rtl;text-align: right ; border: 1px solid black;">
+                                                        <span t-field="o.housing_allowance"/>
+                                                    </td>
+                                                    <td colspan="3">
+                                                        <strong>علاوة بدل سكن</strong>
+                                                    </td>
+                                                </tr>
+                                                <tr style="direction: rtl;text-align: right ; border: 1px solid black;">
+                                                    <td colspan="2"
+                                                        style="direction: rtl;text-align: right ; border: 1px solid black;">
+                                                        <span t-field="o.wage"/>
+                                                    </td>
+                                                    <td colspan="3"
+                                                        style="direction: rtl;text-align: right ; border: 1px solid black;">
+                                                        <strong>جملة المرتب مبلغ</strong>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: none;"></td>
+                                                    <td style="border: none;"></td>
+                                                    <td style="border: none;"></td>
+                                                    <td style="border: none;"></td>
+                                                </tr>
+                                            </table>
+                                            <table class="table">
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>الأجر المذكور اعلاه خاضع لضريبة الدخل الشخصي والتامين
+                                                            الاجتماعي الذي يتم استقطاعهما منه
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1px solid white; text-align: right;">
+                                                        <strong>يكون هذا العقد خاضع لنصوص قانون العمل لسنة 1997
+                                                            وتعديلاته التي تصدر من وقت لأخر, ويخضع كذلك للائحة جزاءات
+                                                            الشركة المعمول بها والمصدق عليها بواسطة مكتب العمل المختص
+                                                            وتعتبر جزء لا يتجزأ من هذا العقد
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>على الطرف الثاني أن يكون لائقا طبيا وأن يقدم شهادة صحية
+                                                            بذلك معتمدة من جهات الاختصاص. أخفاء أي معلومات عن الحالة
+                                                            الصحية للطرف الثاني وقت التعيين تشكل أرضية لإنهاء الخدمة حسب
+                                                            أحكام قانون العمل
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>يستحق الطرف الثاني أجازة سنوية قدرها 25 يوم وفقا لقانون
+                                                            العمل والنظام الداخلي للشركة بعد أكمال عام من الخدمة
+                                                            المستمرة يحدد الطرف الأول ميعاد الأجازة خلال السنة حسب
+                                                            مقتضيات العمل
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>يلتزم الطرف الثاني بتقديم شهادة طبية معتمدة حال تغيبه عن
+                                                            العمل لاية أسباب مرضية وعليه أخطار المسئول مباشرة فى حالة
+                                                            عدم مقدرته في الذهاب للموقع لأسباب صحية. في حال عدم الالتزام
+                                                            بهذا البند سوف يتم أجراء اللازم حسب لوائح الشركة
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>يلتزم الطرف الثانى حال رغبته فى ترك العمل لدى الطرف
+                                                            الأول أخطار الطرف الأول فى خلال مدة اقصاها شهر من التاريخ
+                                                            الذى يرغب فى ترك العمل فيه, كما يلتزم الطرف الأول بمنح الطرف
+                                                            الثانى فترة شهر انذار قبل تاريخ أنتهاء العقد أو العمل محل
+                                                            التعاقد او وفق ما تحدد الماده (50) من قانون العمل
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>يلتزم الطرف الثاني بالزي و السلوك اللائقين وفقا لتوجيهات
+                                                            الادارة وان يؤدي عمله بكل مهارة وامانة ووفق ما تقتضه الوظيفة
+                                                            المكلف بها وقواعد ولوائح الشركة وان يكرس نفسه ووقته للعمل
+                                                            والانصياع لأوامر الطرف الأول وان يساعد زملاءه في العمل و
+                                                            الفعل المشترك والتواصل والتعاون معهم علي جميع المستويات
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>على الطرف الثانى الحفاظ على ادوات و ممتلكات الشركة التى
+                                                            يستعملها بحالة جيدة ومراجعتها ونظافتها وابقائها في مواقع
+                                                            العمل وفقا لتعليمات الطرف الأول ويكون مسئولا عن اى اعطال او
+                                                            فقدان او تلف ينتج عن اهمال او تقصير او سوء استعمال
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>اثناء الخدمة او بعد ذلك لا يسمح للطرف الثاني باعطاء او
+                                                            كشف ايه معلومات خاصة بشان معاملات او عمل او عملاء الشركة
+                                                            مهما كانت دون موافقة الشركة
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>يخضع عمل الطرف الثاني وفقا لهاذا العقد لان ينتقل لاي
+                                                            مكتب أو فرع أو مصنع أو موقع اخر دونما تغيير في الاجر الممنوح
+                                                            و يحق للطرف الأول اضافة أي مهام اخري وفق ما تقتضيه مصلحة
+                                                            العمل وذلك وفق الوصف الوظيفي الموضح عند توقيع العقد
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>يلتزم الطرف الثاني بالمحافظة علي ممتلكات الشركة وجميع
+                                                            المذكرات والكتب والاوراق والرسائل والدفاتر, والصيغ والنماذج
+                                                            والرسوم وغيرها, وجميع النسخ المتعلقة بأعمال الشركة, سواء
+                                                            اعدت بواسطة الطرف الثاني او التي وجدت عنده لظروف العمل وعلي
+                                                            الطرف الثاني عند انهاء العمل او عند الطلب في اي وقت ان
+                                                            يسلمها للطرف الأول
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>الأجر المذكور اعلاه خاضع لضريبة الدخل الشخصي والتامين
+                                                            الاجتماعي الذي يتم استقطاعهما منه
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>لايجوز للطرف الثاني خلال مدة هذا العقد او خلال عمله مع
+                                                            الطرف الأول (اثناء ساعات العمل) العمل او التفاوض مع اي جهة
+                                                            اخري والتي سوف تتعارض مع مصلحة الشركة
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>يجب علي الطرف الثاني الامتثال لقواعد وانظمة السلامة في
+                                                            اماكن العمل وقواعد وانظمة الصحة البيئية, ويكون الطرف الثاني
+                                                            مسئولا عن اي اهمال او تقصير في هذا الشأن
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>يقوم الطرف الأول بتوفير المعدات اللازمة للعمل والأدوات
+                                                            ومعدات السلامة من حيث الملابس والمعدات وأدوات القياس, علي
+                                                            النحو الذي يحدده الاجراءات المعمول بها في هذا المجال (وفق ما
+                                                            تتطلبه مقتضيات العمل)
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>مالم يرد ذكره فى هذا العقد تطبق عليه نصوص قانون العمل
+                                                            لسنة 1997 ولوائح الشركة وأى منشورات تصدرها الشركة لتنظيم
+                                                            العمل طالما لا تتعارض مع نصوص القانون
+                                                        </strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>الاسم والتوقيع (الطرف الأول)</strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>أثبات شخصية</strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                         <span t-field="o.employee_id"/>
+                                                        <strong>الاسم والتوقيع (الطرف الثانى)</strong>
+                                                    </td>
+
+
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>أثبات شخصية</strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>الاسم والتوقيع (الشاهد الأول)</strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>أثبات شخصية</strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>الاسم والتوقيع (الشاهد الثانى)</strong>
+                                                    </td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td style="border: 1 px solid white; text-align: right;">
+                                                        <strong>أثبات شخصية</strong>
+                                                    </td>
+
+                                                </tr>
+
+                                            </table>
+                                        </group>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

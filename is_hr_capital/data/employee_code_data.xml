@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="seq_emp_no" model="ir.sequence">
+            <field name="name">EMP No.</field>
+            <field name="code">hr.employee</field>
+            <!--            <field name="prefix">CAP</field>-->
+            <!--            <field name="padding">4</field>-->
+            <field eval="False" name="company_id"/>
+            <field name="implementation">no_gap</field>
+        </record>
+    </data>
+</odoo>

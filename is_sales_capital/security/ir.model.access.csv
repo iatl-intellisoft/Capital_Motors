@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+funding_entity,Funding.entity,model_funding_entity,stock.group_stock_manager,1,1,1,1
+funding,Funding,model_funding,stock.group_stock_manager,1,1,1,1
+access_employee_commission,employee.commission,model_employee_commission,sales_team.group_sale_manager,1,1,1,1
+access_sale_commission,sale.commission,model_sale_commission,sales_team.group_sale_manager,1,1,1,1

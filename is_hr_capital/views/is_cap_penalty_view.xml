@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <data>
+        <menuitem id="menu_penalty_main" name="Penalty" parent="hr.menu_hr_root"/>
+        <!--configuration-->
+        <!--Violation Type-->
+        <record id="hr_violation_type_tree" model="ir.ui.view">
+            <field name="name">hr.violation.type.tree</field>
+            <field name="model">hr.violation.type</field>
+            <field name="arch" type="xml">
+                <tree string="Type">
+                    <field name="name"/>
+                    <field name="deduction_type"/>
+                    <field name="penalty"/>
+                </tree>
+            </field>
+        </record>
+        <record id="hr_violation_type_form" model="ir.ui.view">
+            <field name="name">hr.violation.type.form</field>
+            <field name="model">hr.violation.type</field>
+            <field name="arch" type="xml">
+                <form string="Type">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="penalty"/>
+                            </group>
+                            <group>
+                                <field name="deduction_type"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="hr_violation_type_action" model="ir.actions.act_window">
+            <field name="name">Violation Type</field>
+            <field name="res_model">hr.violation.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem action="hr_violation_type_action" id="menu_hr_violation_type" name="Violation Type" parent="hr.menu_human_resources_configuration"/>
+        <!--Penalty-->
+        <record id="hr_penalty_tree" model="ir.ui.view">
+            <field name="name">hr.penalty.tree</field>
+            <field name="model">hr.emp.penalty</field>
+            <field name="arch" type="xml">
+                <tree string="Penalty">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="date"/>
+                    <field name="violation_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="hr_penalty_form" model="ir.ui.view">
+            <field name="name">hr.penalty.form</field>
+            <field name="model">hr.emp.penalty</field>
+            <field name="arch" type="xml">
+                <form string="Penalty">
+                    <header>
+                        <button class="oe_highlight" groups="hr.group_hr_manager" name="clarification" states="draft" string="Clarification" type="object"/>
+                        <button string="Department Manager Approval" name="dm" states="clarification" type="object"  class="oe_highlight" groups="is_hr_capital.group_department_manager"/>
+                        <button class="oe_highlight" groups="hr.group_hr_manager" name="hr" states="dm" string="Hr Manager Approval" type="object"/>
+                        <button class="oe_highlight" groups="is_hr_capital.group_hr_general_manager" name="hrg" states="hr" string="Hr General Manager Approval" type="object"/>
+                        <button class="oe_highlight" groups="is_hr_capital.group_hr_general_manager, hr.group_hr_manager" name="refuse" states=" hr,hrg" string="Refuse" type="object"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field attrs="{'readonly':[('state','!=','draft')]}" name="date"/>
+                                <field name="department_id"/>
+                                <field attrs="{'readonly':[('state','!=','draft')]}" name="violation_id"/>
+                                <field attrs="{'readonly':[('state','!=','draft')]}" name="penalty_amount"/>
+                                <!--                            <field name="main_department_id" attrs="{'readonly':[('state','!=','draft')]}"/>-->
+                            </group>
+                            <group>
+                                <field name="user_id"/>
+                                <field attrs="{'readonly':[('state','!=','draft')]}" name="employee_id"/>
+                                <field name="job_id"/>
+                                <field attrs="{'readonly':[('state','!=','draft')]}" name="penalty_type"/>
+                                <field attrs="{'invisible':[('penalty_type','!=','warning')]}" name="penalty"/>
+                            </group>
+                        </group>
+                        <group string="Reasons">
+                            <field attrs="{'readonly':[('state','!=','draft')], 'required':[('state','=','draft. ')]}" name="description" placeholder="Reasons ......."/>
+                        </group>
+                        <notebook>
+                            <page string="Manager's Approvals">
+                                <group>
+                                    <group string="Managers">
+                                        <field name="dmanager_id"/>
+                                        <field name="hr_manager_id"/>
+                                        <field name="hrg_manager_id"/>
+                                    </group>
+                                    <group string="Manager's Comments">
+                                        <field attrs="{'readonly':[('state','!=','clarification')]}" name="dnote"/>
+                                        <field attrs="{'readonly':[('state','!=','dm')]}" name="hrnote"/>
+                                        <field attrs="{'readonly':[('state','!=','hr')]}" name="hrgnote"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="hr_penalty_search" model="ir.ui.view">
+            <field name="name">hr.penalty.search</field>
+            <field name="model">hr.emp.penalty</field>
+            <field name="arch" type="xml">
+                <search string="Penalty">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="state"/>
+                    <!--                    <group expand="0" string="Group By">-->
+                    <!--                        <filter string="Violation Type" domain="[]" context="{'group_by':'violation_id'}"/>-->
+                    <!--                        <filter string="State" domain="[]" context="{'group_by':'state'}"/>-->
+                    <!--                    </group>-->
+                </search>
+            </field>
+        </record>
+        <record id="hr_penalty_action" model="ir.actions.act_window">
+            <field name="name">Employee Penalty</field>
+            <field name="res_model">hr.emp.penalty</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem action="hr_penalty_action" id="menu_hr_penalty" name="Employee Penalty" parent="menu_penalty_main"/>
+    </data>
+</odoo>

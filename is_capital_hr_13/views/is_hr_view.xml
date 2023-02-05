@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- inherent form hr.applicant -->
+    <record id="hr_applicant_view_form_inherited" model="ir.ui.view">
+        <field name="name">Inherited view application form</field>
+        <field name="model">hr.applicant</field>
+        <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email_from'][1]" position="before">
+                <field name="date_of_app"/>
+            </xpath>
+            <xpath expr="//field[@name='email_from'][1]" position="before">
+                <field name="is_training"/>
+            </xpath>
+            <xpath expr="/form/sheet/group" position="after">
+                <group string="Address">
+                    <field name="country"/>
+                    <field name="city"/>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='description']" position="before">
+                <separator string="Education"/>
+                <group>
+                    <group>
+                        <field name="high_school"/>
+                        <field name="school_from"/>
+                    </group>
+                    <group>
+                        <field name="school_add"/>
+                        <field name="school_to"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="college"/>
+                        <field name="college_from"/>
+                    </group>
+                    <group>
+                        <field name="college_add"/>
+                        <field name="college_to"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="other"/>
+                        <field name="other_from"/>
+                    </group>
+                    <group>
+                        <field name="other_add"/>
+                        <field name="other_to"/>
+                    </group>
+                </group>
+            </xpath>
+
+            <xpath expr="//field[@name='description']" position="before">
+                <separator string="References"/>
+                <separator string="Please list three professional references."/>
+                <group>
+                    <group>
+                        <field name="ref_one"/>
+                        <field name="ref_one_ph" widget="phone"/>
+                        <field name="ref_one_add"/>
+                    </group>
+                    <group>
+                        <field name="ref_one_relation"/>
+                        <field name="ref_one_com"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="ref_two"/>
+                        <field name="ref_two_ph" widget="phone"/>
+                        <field name="ref_two_add"/>
+                    </group>
+                    <group>
+                        <field name="ref_two_relation"/>
+                        <field name="ref_two_com"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="ref_three"/>
+                        <field name="ref_three_ph" widget="phone"/>
+                        <field name="ref_three_add"/>
+                    </group>
+                    <group>
+                        <field name="ref_three_relation"/>
+                        <field name="ref_three_com"/>
+                    </group>
+                </group>
+            </xpath>
+
+            <xpath expr="//field[@name='description']" position="before">
+                <separator string="PREVIOUS TRAINING (start with the most recent)"/>
+                <group>
+                    <group>
+                        <field name="comp_one"/>
+                        <field name="comp_one_add"/>
+                        <field name="comp_one_jop"/>
+                        <field name="comp_one_end"/>
+                        <field name="comp_one_from"/>
+                        <field name="comp_one_reson"/>
+                    </group>
+                    <group>
+                        <field name="comp_one_ph" widget="phone"/>
+                        <field name="comp_one_sup"/>
+                        <field name="comp_one_str"/>
+                        <field name="comp_one_resp"/>
+                        <field name="comp_one_to"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="comp_two"/>
+                        <field name="comp_two_add"/>
+                        <field name="comp_two_jop"/>
+                        <field name="comp_two_end"/>
+                        <field name="comp_two_from"/>
+                        <field name="comp_two_reson"/>
+                    </group>
+                    <group>
+                        <field name="comp_two_ph" widget="phone"/>
+                        <field name="comp_two_sup"/>
+                        <field name="comp_two_str"/>
+                        <field name="comp_two_resp"/>
+                        <field name="comp_two_to"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="comp_three"/>
+                        <field name="comp_three_add"/>
+                        <field name="comp_three_jop"/>
+                        <field name="comp_three_end"/>
+                        <field name="comp_three_from"/>
+                        <field name="comp_three_reson"/>
+                    </group>
+                    <group>
+                        <field name="comp_three_ph" widget="phone"/>
+                        <field name="comp_three_sup"/>
+                        <field name="comp_three_str"/>
+                        <field name="comp_three_resp"/>
+                        <field name="comp_three_to"/>
+                    </group>
+                </group>
+                <xpath expr="//field[@name='description']" position="before">
+                    <separator string="DISCLAIMER AND SIGNATURE"/>
+                    <separator string="I certify that my answers are true and complete to the best of my knowledge.
+If this application leads to employment, I understand that false or misleading information in my application or interview may result
+in my release."/>
+                </xpath>
+            </xpath>
+
+        </field>
+    </record>
+
+
+    <!-- adding Employee Support  -->
+    <!-- Form view of Employee Support  -->
+    <record id="view_emp_support_form" model="ir.ui.view">
+        <field name="name">emp.support.form</field>
+        <field name="model">emp.support</field>
+        <field name="arch" type="xml">
+            <form string="Employee Support">
+                <sheet string="Employee Support">
+                    <group string="General Info">
+                        <group>
+                            <field name="date"/>
+                            <field name="emp_name"/>
+                            <field name="customer"/>
+                        </group>
+                        <group>
+                            <field name="item"/>
+                            <field name="amount"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Accounting Details">
+                            <group>
+                                <group>
+                                    <field name="debit_account"/>
+                                    <field name="credit_account"/>
+                                </group>
+                                <group>
+                                    <field name="journal_id"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <!--                <div class="oe_chatter">-->
+                <!--                    <field name="message_follower_ids" widget="mail_followers"/>-->
+                <!--                    <field name="message_ids" widget="mail_thread"/>-->
+                <!--                    <field name="activity_ids" widget="mail_activity"/>-->
+                <!--                </div>-->
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view of Employee Support -->
+    <record id="view_emp_support_tree" model="ir.ui.view">
+        <field name="name">view.emp.support.tree</field>
+        <field name="model">emp.support</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date"/>
+                <field name="emp_name"/>
+                <field name="customer"/>
+                <field name="item"/>
+                <field name="amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action of Employee Suppor -->
+    <record id="action_es" model="ir.actions.act_window">
+        <field name="name">Employee Support</field>
+        <field name="res_model">emp.support</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- adding Office Maintenance form -->
+    <!-- Form view of Office Maintenance  -->
+    <record id="view_office_maintenance_form" model="ir.ui.view">
+        <field name="name">emp.support.form</field>
+        <field name="model">office.maintenance</field>
+        <field name="arch" type="xml">
+            <form string="Office Maintenance">
+                <sheet string="Employee Support">
+                    <group string="General Info">
+                        <group>
+                            <field name="date"/>
+                            <field name="req"/>
+                        </group>
+                        <group>
+                            <field name="maintenance_to"/>
+                            <field name="amount"/>
+                        </group>
+                    </group>
+                </sheet>
+                <!--                <div class="oe_chatter">-->
+                <!--                    <field name="message_follower_ids" widget="mail_followers"/>-->
+                <!--                    <field name="message_ids" widget="mail_thread"/>-->
+                <!--                    <field name="activity_ids" widget="mail_activity"/>-->
+                <!--                </div>-->
+
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view of office maintenance -->
+    <record id="view_office_maintenance_tree" model="ir.ui.view">
+        <field name="name">view.office.maintenance.tree</field>
+        <field name="model">office.maintenance</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date"/>
+                <field name="req"/>
+                <field name="maintenance_to"/>
+                <field name="amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action of Employee Support -->
+    <record id="action_om" model="ir.actions.act_window">
+        <field name="name">Office Maintenance</field>
+        <field name="res_model">office.maintenance</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- adding Saturday work plan  -->
+    <!-- Form view of Saturday work plan  -->
+    <record id="view_Saturday_work_plan_form" model="ir.ui.view">
+        <field name="name">saturday.work.form</field>
+        <field name="model">saturday.work</field>
+        <field name="arch" type="xml">
+            <form>
+<!--                <header>-->
+<!--                    <button name="create_penalty" type="object"-->
+<!--                            string="create_penalty"  class="oe_highlight" groups="base.group_user"/>-->
+<!--                </header>-->
+                <sheet string="Saturday work plan">
+                    <group>
+                        <field name="date"/>
+                    </group>
+                    <notebook>
+                        <page string="Employees">
+                            <field name="emp_ids">
+                                <tree editable="bottom">
+                                    <field name="emp_id"/>
+                                    <field name="dept_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view of Saturday work plan -->
+    <record id="view_Saturday_work_plan_tree" model="ir.ui.view">
+        <field name="name">saturday.work.tree</field>
+        <field name="model">saturday.work</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action of Saturday work plan  -->
+    <record id="action_swp" model="ir.actions.act_window">
+        <field name="name">Saturday work plan</field>
+        <field name="res_model">saturday.work</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="HR Management" parent="hr.menu_hr_root" id="hr_mange2" sequence="11"/>
+    <menuitem name="Employee Support" parent="hr_mange2" sequence="1" id="menu_sf" action="action_es"
+        groups="base.group_user"/>
+    <menuitem name="Office Maintenance Request" parent="hr_mange2" id="menu_om" sequence="2" action="action_om"
+        groups="base.group_user"/>
+    <menuitem name="Saturday Work Plan" parent="hr_mange2" id="menu_swp" sequence="3" action="action_swp"
+        groups="base.group_user"/>
+</odoo>

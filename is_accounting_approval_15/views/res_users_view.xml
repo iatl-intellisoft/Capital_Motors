@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Updated to add approvals manager and signature-->
+        <record model="ir.ui.view" id="inherit_res_users_form">
+            <field name="name">inherit.res.users.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" postion="inside">
+                    <button name="resize_signature" string="Resize Signature" type="object" class="oe_highlight"/>
+                </xpath>
+                <field name="signature" position="before">
+                    <field name="approval_manager"/>
+                    <field name="user_signature" widget="image" readonly="0"/>
+<!--                    <field name="resized_user_signature" widget="image" readonly="0"/>-->
+                </field>
+            </field>
+        </record>
+        <!-- Company View Customization: adding header and footer images -->
+        <record id="is_inherited_view_company_form" model="ir.ui.view">
+            <field name="name">is.inherited.view.company.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="before">
+                    <group>
+                        <field name="f_limit"/>
+                    </group>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_wizard_product_movements" model="ir.ui.view">
+            <field name="name">wizard.product.movements</field>
+            <field name="model">wizard.product.movements</field>
+            <field name="arch" type="xml">
+                <form string=" product" version="7.0">
+                    <group col="4">
+                        <field name="categ_id"/>
+                        <field domain="[('categ_id', '=', categ_id)]" name="product_id"/>
+                        <field name="from_date"/>
+                        <field name="to_date"/>
+                    </group>
+                    <footer>
+                        <button class="btn-primary" name="print_report" string="Print" type="object"/>
+                        <button class="btn-secondary" special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="view_product_movements_excel" model="ir.ui.view">
+            <field name="name">view.product.movements.report.excel</field>
+            <field name="model">product.movements.report.excel</field>
+            <field name="arch" type="xml">
+                <form string="File to Downloads">
+                    <field invisible="1" name="name"/>
+                    <field filename="name" name="file_download"/>
+                </form>
+            </field>
+        </record>
+        <record id="action_view_wizard_product_movements" model="ir.actions.act_window">
+            <field name="name">product moves </field>
+            <field name="res_model">wizard.product.movements</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_wizard_product_movements"/>
+            <field name="target">new</field>
+        </record>
+        <menuitem action="action_view_wizard_product_movements" id="menu_product_moves_report" name="Item Card XLS Report" parent="stock.menu_warehouse_report"/>
+    </data>
+</odoo>

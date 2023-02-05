@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Structure Type -->
+        <record id="structure_type_capital_employee" model="hr.payroll.structure.type">
+            <field name="name">Capital Employee</field>
+            <field eval="False" name="country_id"/>
+        </record>
+        <record id="GRANT" model="hr.salary.rule.category">
+            <field name="name">Administrative Grant</field>
+            <field name="code">GRANT</field>
+        </record>
+        <record id="hr_salary_category" model="hr.salary.rule.category">
+            <field name="name">Incentives</field>
+            <field name="code">INCENTIVES</field>
+        </record>
+        <!-- Salary Structure -->
+        <record id="structure_capital_employees" model="hr.payroll.structure">
+            <field name="name">Capital Payroll Structure</field>
+            <field name="type_id" ref="is_hr_capital.structure_type_capital_employee"/>
+            <!-- <field eval="True" name="regular_pay"/> -->
+            <field eval="False" name="country_id"/>
+        </record>
+        <record id="is_hr_capital.structure_type_capital_employee" model="hr.payroll.structure.type">
+            <field name="default_struct_id" ref="structure_capital_employees"/>
+        </record>
+        <record id="hr_rule_basic" model="hr.salary.rule">
+            <field name="name">Basic </field>
+            <field eval="1" name="sequence"/>
+            <field name="code">BASIC</field>
+            <field name="category_id" ref="hr_payroll.BASIC"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.wage*payslip.worked_days*.48</field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>
+        <record id="hr_rule_cola" model="hr.salary.rule">
+            <field name="name">Cola Allowance</field>
+            <field eval="2" name="sequence"/>
+            <field name="code">COLA</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result =  contract.cola_allowance &gt;0.0 </field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.wage*payslip.worked_days*.2</field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>
+        <record id="hr_rule_transportation" model="hr.salary.rule">
+            <field name="name">Transportation Allowance</field>
+            <field eval="3" name="sequence"/>
+            <field name="code">TransportationAll</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result =  contract.transportation_allowance &gt;0.0 </field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.wage*payslip.worked_days*.18</field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>a
+
+        <record id="hr_rule_housing" model="hr.salary.rule">
+            <field name="name">Housing Allowance</field>
+            <field eval="4" name="sequence"/>
+            <field name="code">HousingAll</field>
+            <field name="category_id" ref="hr_payroll.ALW"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result =  contract.housing_allowance &gt;0.0 </field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.wage*payslip.worked_days*.14</field>
+            <field name="struct_id" ref="structure_capital_employees"/></record>
+        <record id="hr_rule_grants" model="hr.salary.rule">
+            <field name="name">Administrative Grant</field>
+            <field eval="5" name="sequence"/>
+            <field name="code">GRANT</field>
+            <field name="category_id" ref="is_hr_capital.GRANT"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result =  payslip.grants &gt;0.0 </field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.wage*payslip.worked_days * payslip.grants / 100 </field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>
+        <record id="hr_rule_gross" model="hr.salary.rule">
+            <field name="name">GROSS</field>
+            <field eval="6" name="sequence"/>
+            <field name="code">GROSS</field>
+            <field name="category_id" ref="hr_payroll.GROSS"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <!--            <field name="amount_python_compute">result = contract.wage*payslip.worked_days</field>-->
+            <field name="amount_python_compute">result =contract.wage*payslip.worked_days</field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>
+        <record id="hr_rule_tax_emp" model="hr.salary.rule">
+            <field name="name">Tax</field>
+            <field eval="7" name="sequence"/>
+            <field name="code">TAX</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result =  contract.under_training == False </field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = ((contract.official_sal*payslip.worked_days- contract.official_sal*payslip.worked_days*.08 - 75 - 40 - 1231) * 0.15 + 2.50)</field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>
+        <record id="hr_rule_social_ins" model="hr.salary.rule">
+            <field name="name">Social Ins. 8%</field>
+            <field eval="8" name="sequence"/>
+            <field name="code">SocialIns</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = (contract.social_insurance_type == 'percentage' and  contract.social_insurance == True and contract.under_training == False) </field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.official_sal*payslip.worked_days * 0.08</field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>
+        <record id="hr_rule_social_ins_company" model="hr.salary.rule">
+            <field name="name">Social Ins. 17%</field>
+            <field eval="9" name="sequence"/>
+            <field name="code">SocialInsComp</field>
+            <field name="category_id" ref="hr_payroll.COMP"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = (contract.social_insurance == True and contract.social_insurance_type == 'percentage' and contract.under_training == False) </field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.official_sal*payslip.worked_days * 0.17 </field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>
+        <record id="hr_rule_social_ins_company_remain" model="hr.salary.rule">
+            <field name="name">Social Ins. 17% Of Remaining </field>
+            <field eval="9" name="sequence"/>
+            <field name="code">SocialInsCompRemain</field>
+            <field name="category_id" ref="hr_payroll.COMP"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = (contract.social_insurance == True and contract.social_insurance_type == 'percentage' and contract.under_training == False) </field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = (contract.official_sal*payslip.worked_days - contract.official_sal*payslip.worked_days) * 0.17 </field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>
+        <record id="hr_rule_social_ins_company_fix" model="hr.salary.rule">
+            <field name="name">Social Ins</field>
+            <field eval="9" name="sequence"/>
+            <field name="code">SocialInsComp</field>
+            <field name="category_id" ref="hr_payroll.COMP"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">result = (contract.social_insurance == True and contract.social_insurance_type == 'amount') </field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.insurance_amount </field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>
+        <record id="hr_rule_phone_deduction" model="hr.salary.rule">
+            <field name="name">Phone Deduction</field>
+            <field eval="10" name="sequence"/>
+            <field name="code">PhoneDeduction</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = contract.phone</field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>
+        <record id="hr_rule_short_loan" model="hr.salary.rule">
+            <field name="name">Advance Salary</field>
+            <field eval="11" name="sequence"/>
+            <field name="code">ADLOAN</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.short_loan</field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>
+        <record id="hr_rule_long_loan" model="hr.salary.rule">
+            <field name="name">Long Loan</field>
+            <field eval="12" name="sequence"/>
+            <field name="code">ELOAN</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = payslip.long_loan</field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>
+        <record id="hr_rule_pen" model="hr.salary.rule">
+            <field name="name">Penalty</field>
+            <field eval="13" name="sequence"/>
+            <field name="code">PEN</field>
+            <field name="category_id" ref="hr_payroll.DED"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result = (payslip.absent_deduction + payslip.delay_deduction_hour + payslip.delay_days_minutes)</field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>
+        <record id="hr_rule_net" model="hr.salary.rule">
+            <field name="name">Net Salary</field>
+            <field eval="15" name="sequence"/>
+            <field name="code">NET</field>
+            <field name="category_id" ref="hr_payroll.NET"/>
+            <field name="condition_select">none</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python_compute">result =  categories.GRANT + categories.GROSS - categories.DED </field>
+            <field name="struct_id" ref="structure_capital_employees"/>
+        </record>
+    </data>
+</odoo>

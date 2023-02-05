@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Trip menu-->
+    <menuitem groups="group_hr_trip_user" id="menu_hr_trip" name="Trip" parent="hr.menu_hr_root" sequence="30"/>
+    <record id="hr_trip_tree_view" model="ir.ui.view">
+        <field name="name">hr.trip.tree</field>
+        <field name="model">hr.trip</field>
+        <field name="arch" type="xml">
+            <tree string="Trip">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="department_id"/>
+                <field name="job_id"/>
+                <field name="no_of_days"/>
+                <field name="trip_amount" sum="trip_amount"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="hr_trip_form_view" model="ir.ui.view">
+        <field name="name">hr.trip.form</field>
+        <field name="model">hr.trip</field>
+        <field name="arch" type="xml">
+            <form string="Trip">
+                <header>
+                    <button class="oe_highlight" groups="is_hr_capital.group_department_manager" name="trip_first_approve" states="draft" string="Approve" type="object"/>
+                    <button class="oe_highlight" groups="hr.group_hr_manager" name="trip_first_confirm" states="approve" string="Confirm" type="object"/>
+                    <button class="oe_highlight" groups="is_hr_capital.group_department_manager" name="trip_second_approve" states="confirm" string="Days Approve" type="object"/>
+                    <button class="oe_inline" groups="hr.group_hr_manager" name="trip_second_confirm" states="approve2" string="Days Confirm" type="object"/>
+                    <button class="oe_highlight" groups="account.group_account_manager" name="trip_account_done" states="confirm2" string="Generate Journal Entries" type="object"/>
+                    <button class="oe_highlight" groups="hr.group_hr_manager" name="trip_refuse" states="approve,confirm" string="Refuse" type="object"/>
+                    <button class="oe_highlight" groups="hr.group_hr_manager" name="trip_reset" states="refuse" string="Reset To Draft" type="object"/>
+                    <field name="state" statusbar_visible="draft,approve,confirm,approve2,confirm2,done" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div colspan="4">
+                        <group>
+                            <field attrs="{'readonly':[('state','!=','draft')]}" name="employee_id"/>
+                            <field name="department_id"/>
+                            <field name="job_id"/>
+                            <field class="oe_inline" invisible="1" name="emp_salary"/>
+                        </group>
+                    </div>
+                    <group string="Trip Information">
+                        <field attrs="{'readonly':[('state','in',['done','confirm2'])]}" name="trip_dist" required="1"/>
+                        <field invisible="1" name="day_in_words"/>
+                        <field invisible="1" name="day_start_in_words"/>
+                        <field attrs="{'readonly':[('state','in',['done','confirm2'])]}" name="name" required="1"/>
+                        <field attrs="{'readonly':[('state','in',['done','confirm2'])]}" name="maintenance" required="1"/>
+                        <field attrs="{'readonly':[('state','not in',['approve','draft'])]}" name="trip_start_date" required="1"/>
+                        <field attrs="{'required':[('state','=','confirm')],'invisible':[('state','in',['draft', 'approve'])],'readonly':[('state','in',['done','confirm2'])]}" name="trip_end_date"/>
+                        <field attrs="{'invisible':[('state','in',['draft', 'approve'])],'readonly':[('state','in',['done','confirm2'])]}" name="no_of_days"/>
+                        <field attrs="{'invisible':[('state','in',['draft','confirm','approve'])]}" name="trip_amount" readonly="0"/>
+                    </group>
+                    <notebook attrs="{'invisible':[('state','in',['draft','approve','confirm','approve2'])]}">
+                        <page string="Accounting Information">
+                            <group>
+                                <group>
+                                    <field attrs="{'readonly':[('state','=','done')],'required':[('state','=','confirm2')]}" name="employee_account"/>
+                                    <field name="analytic_debit_account_id"/>
+                                    <field attrs="{'invisible':[('state','!=','done')],'readonly':[('state','=','done')]}" name="move_id"/>
+                                </group>
+                                <group>
+                                    <field attrs="{'readonly':[('state','=','done')],'required':[('state','=','confirm2')]}" name="trip_account"/>
+                                    <field attrs="{'readonly':[('state','=','done')],'required':[('state','=','confirm2')]}" name="journal_id"/>
+                                </group>
+                            </group>
+                            <group>
+                                <field name="note"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="hr_trip_filter" model="ir.ui.view">
+        <field name="name">hr.trip.search</field>
+        <field name="model">hr.trip</field>
+        <field name="arch" type="xml">
+            <search string="Search Trip">
+                <field name="name" string="Trip Name"/>
+                <field name="employee_id"/>
+                <field name="trip_start_date"/>
+                <field name="trip_end_date"/>
+                <filter domain="[('state','=','draft')]" help="Draft Trips" name="draft" string="Draft"/>
+                <filter domain="[('state','=','approve')]" help="Approved Trips" name="approve" string="Approve"/>
+                <filter domain="[('state','=','confirm')]" help="Confirmed Trips" name="confirm" string="Confirm"/>
+                <filter domain="[('state','=','approve2')]" help="department approved trip days" name="a_day" string="Approved Days"/>
+                <filter domain="[('state','=','confirm2')]" help="hr confirm trip days" name="c_day" string="Confirmed Days"/>
+                <filter domain="[('state','=','done')]" help="Done Trips" name="done_filter" string="Done"/>
+                <group col="8" colspan="4" expand="0" string="Group By...">
+                    <filter context="{'group_by':'state'}" name="state" string="State"/>
+                    <filter context="{'group_by':'employee_id'}" name="employee_id" string="Employee"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_hr_trip_edited" model="ir.actions.act_window">
+        <field name="name">Trip Request</field>
+        <field name="res_model">hr.trip</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="hr_trip_filter"/>
+    </record>
+    <menuitem action="action_hr_trip_edited" groups="group_hr_trip_user" id="menu_hr_trip_request" name="Trip Request" parent="menu_hr_trip"/>
+</odoo>

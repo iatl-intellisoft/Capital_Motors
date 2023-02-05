@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_paysheet_test" model="ir.ui.view">
+            <field name="name">wizard.pay.sheet.form</field>
+            <field name="model">wizard.paysheet</field>
+            <field name="arch" type="xml">
+                <form string="Pay Sheet">
+                    <group>
+                        <group>
+                            <field name="from_date"/>
+                        </group>
+                        <group>
+                            <field name="to_date"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button class="btn-primary" name="print_report" string="Print" type="object"/>
+                        <button class="btn-secondary" special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="view_paysheet_report_excel" model="ir.ui.view">
+            <field name="name">view.payslip.report.excel</field>
+            <field name="model">payslip.report.excel</field>
+            <field name="arch" type="xml">
+                <form string="File to Downloads">
+                    <field invisible="1" name="name"/>
+                    <field filename="name" name="file_download"/>
+                </form>
+            </field>
+        </record>
+        <record id="action_payslip_report_excel" model="ir.actions.act_window">
+            <field name="name">Paylsip Excel Report</field>
+            <field name="res_model">wizard.paysheet</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem action="action_payslip_report_excel" groups="hr.group_hr_manager" id="menu_pay_sheet_reports" name="Pay Sheet" parent="hr_payroll.menu_hr_payroll_report" sequence="5"/>
+    </data>
+</odoo>

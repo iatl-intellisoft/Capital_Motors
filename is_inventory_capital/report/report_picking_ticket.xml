@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_picking_inherit" inherit_id="stock.report_picking">
+        <xpath expr="//t" position="replace">
+            <t t-call="web.html_container">
+                <t t-as="o" t-foreach="docs">
+                    <t t-call="web.html_container">
+                        <t t-call="web.external_layout">
+                            <div class="page">
+                                <br/>
+                                <br/>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <span>
+                                                <strong>Outgoing No:</strong>
+                                            </span>
+                                            <span t-field="o.name"/>
+                                            <span>               </span>
+                                            <br/>
+                                            <span>
+                                                <strong>Customer:</strong>
+                                            </span>
+                                            <span t-field="o.partner_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span>
+                                                <strong>Date:</strong>
+                                            </span>
+                                            <span t-field="o.date_done"/>
+                                            <span>               </span>
+                                        </td>
+                                        <!--                                        <td>-->
+                                        <!--                                            <span>-->
+                                        <!--                                                <strong>Invoice No:</strong>-->
+                                        <!--                                            </span>-->
+                                        <!--                                            &lt;!&ndash;                                         <span t-field="o.name"/>&ndash;&gt;-->
+                                        <!--                                            &lt;!&ndash;                                         <span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>&ndash;&gt;-->
+                                        <!--                                        </td>-->
+                                        <td>
+                                            <span>
+                                                <strong>Currency :</strong>
+                                            </span>
+                                            <span>SDG</span>
+                                            <!--                                         <span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>-->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>
+                                                <strong>Warehouse Name</strong>
+                                            </span>
+                                            <span t-field="o.location_dest_id.name"/>
+                                            <span>               </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class="table table-bordered  r4-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Item Code</th>
+                                            <th>Item name</th>
+                                            <th>Unit</th>
+                                            <th>QTY</th>
+                                            <th>Balance</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-as="line" t-foreach="o.move_line_ids_without_package">
+                                            <tr>
+                                                <td class="text-left">
+                                                    <span t-esc="line.product_id.default_code"/>
+                                                </td>
+                                                <td class="text-left">
+                                                    <span t-esc="line.product_id.name"/>
+                                                </td>
+                                                <td class="text-left">
+                                                    <span t-esc="line.product_uom_id.name"/>
+                                                </td>
+                                                <td class="text-left">
+                                                    <span t-esc="quantity_done"/>
+                                                </td>
+                                                <td class="text-left">
+                                                    <span t-esc="line.on_hand_qty"/>
+                                                </td>
+                                                <td>
+                                                    <t t-as="sale" t-foreach="o.sale_id">
+                                                        <t t-as="sale" t-foreach="sale.order_line">
+                                                            <t t-if="sale.product_id == line.product_id">
+                                                                <span t-esc="sale.price_subtotal"/>
+                                                            </t>
+                                                        </t>
+                                                    </t>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </xpath>
+    </template>
+</odoo>

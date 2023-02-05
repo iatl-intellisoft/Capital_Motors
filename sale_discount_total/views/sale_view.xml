@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="discount_sale_view_form" model="ir.ui.view">
+            <field name="name">discount.sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="before">
+                    <button class="oe_highlight" groups="sales_team.group_sale_manager" name="action_approve" states="waiting" string="Approve" type="object"/>
+                </xpath>
+                <xpath expr="//button[@name='action_cancel']" position="attributes">
+                    <attribute name="states">draft,sent,sale,waiting</attribute>
+                </xpath>
+                <xpath expr="//group[@name='note_group']" position="replace">
+                    <group col="6" name="note_group">
+                        <group colspan="2" name="discount">
+                            <field groups="product.group_discount_per_so_line" name="discount_type"/>
+                            <field groups="product.group_discount_per_so_line" name="discount_rate"/>
+                        </group>
+                        <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                            <field name="amount_untaxed" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                            <field name="amount_discount" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                            <field name="amount_tax" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                <label for="amount_total"/>
+                                <button class="oe_edit_only oe_link" name="button_dummy" states="draft,sent" string="(update)" type="object"/>
+                            </div>
+                            <field class="oe_subtotal_footer_separator" name="amount_total" nolabel="1" options="{'currency_field': 'currency_id'}" widget="monetary"/>
+                            <!--                            <field name="tax_totals_json"-->
+                            <!--                                   widget="account-tax-totals-field" nolabel="1"-->
+                            <!--                                   colspan="2" invisible="1"/>-->
+                        </group>
+                        <group colspan="4">
+                            <field name="note" nolabel="1" placeholder="Terms and conditions..."/>
+                        </group>
+                        <div class="oe_clear"/>
+                    </group>
+                </xpath>
+                <!-- Roundoff the discount field -->
+                <xpath expr="//field[@name='order_line']/tree/field[@name='discount']" position="attributes">
+                    <attribute name="digits">[16, 2]</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_inherit_total_discount" model="ir.ui.view">
+            <field name="name">sale.order.line.total.discount</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page/field[@name='order_line']/tree/field[@name='price_subtotal']" position="after">
+                    <field force_save="1" name="total_discount"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

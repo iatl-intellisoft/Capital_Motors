@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_salary_transfer_by_employees" model="ir.ui.view">
+        <field name="name">salary_transfer_by_employees</field>
+        <field name="model">hr.salary.transfer</field>
+        <field name="arch" type="xml">
+            <form string="Salary Transfer">
+                <group colspan="4">
+                    <separator colspan="4" string="Employees"/>
+                    <newline/>
+                    <field name="employee_ids" nolabel="1"/>
+                </group>
+                <footer>
+                    <button class="btn-primary" icon="fa-cogs" name="compute_sheet" string="Generate " type="object"/>
+                    <button class="btn-secondary" special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="action_hr_salary_transfer_by_employees" model="ir.actions.act_window">
+        <field name="name">Generate Payment</field>
+        <field name="res_model">hr.salary.transfer</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_salary_transfer_by_employees"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

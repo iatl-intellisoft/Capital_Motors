@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_wizard_adjustment" model="ir.ui.view">
+            <field name="name">wizard.adjustment.report</field>
+            <field name="model">adjustment.report</field>
+            <field name="arch" type="xml">
+                <form string="product">
+                    <group>
+                        <field name="categ_id"/>
+                        <!--                <field name="from_date" />-->
+                        <!--                <field name="to_date" />-->
+                    </group>
+                    <footer>
+                        <button class="btn-primary" name="print_report" string="Print" type="object"/>
+                        <button class="btn-secondary" special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="view_adjustment_excel" model="ir.ui.view">
+            <field name="name">view.adjustment.report.report.excel</field>
+            <field name="model">adjustment.report.report.excel</field>
+            <field name="arch" type="xml">
+                <form string="File to Downloads">
+                    <field invisible="1" name="name"/>
+                    <field filename="name" name="file_download"/>
+                </form>
+            </field>
+        </record>
+        <record id="action_view_adjustment" model="ir.actions.act_window">
+            <field name="name">Inventory Adjustment</field>
+            <field name="res_model">adjustment.report</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_wizard_adjustment"/>
+            <field name="target">new</field>
+        </record>
+        <menuitem action="action_view_adjustment" id="menu_adjustment_report" name="Inventory Adjustment Report" parent="stock.menu_warehouse_report"/>
+    </data>
+</odoo>

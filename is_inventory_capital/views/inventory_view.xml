@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form view Bin Location -->
+    <!--    <record id="bin_location_form" model="ir.ui.view">-->
+    <!--        <field name="name">bin.location.form</field>-->
+    <!--        <field name="model">bin.location</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <form string="">-->
+    <!--                <sheet string="Bin Location">-->
+    <!--                    <group col="2">-->
+    <!--                        <field name="name"/>-->
+    <!--                    </group>-->
+    <!--                </sheet>-->
+    <!--            </form>-->
+    <!--        </field>-->
+    <!--    </record>-->
+    <!-- Tree view Bin Location-->
+    <!--    <record id="bin_location_tree" model="ir.ui.view">-->
+    <!--        <field name="name">bin.location.tree</field>-->
+    <!--        <field name="model">bin.location</field>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <tree>-->
+    <!--                <field name="name"/>-->
+    <!--            </tree>-->
+    <!--        </field>-->
+    <!--    </record>-->
+    <!-- Action of Bin Location -->
+    <!--    <record id="action_bin" model="ir.actions.act_window">-->
+    <!--        <field name="name">Bin Location</field>-->
+    <!--        <field name="res_model">bin.location</field>-->
+    <!--        <field name="view_mode">tree,form</field>-->
+    <!--    </record>-->
+    <record id="inherited_view_diesel_stock_picking_form" model="ir.ui.view">
+        <field name="name">inherited.view.diesel.stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <!--                <xpath expr="//header/button[@name='button_validate']" position="before">-->
+            <!--                    <button name="action_set_done_qty" type="object" string="Set Done Quantities" attrs="{'invisible':[('state','in',('draft','done'))]}"/>-->
+            <!--                </xpath>-->
+            <xpath expr="//tree/field[@name='product_id']" position="after">
+                <!--                    <field name="is_car" invisible="1"/>-->
+                <field name="part_no"/>
+                <!--                <field name="package_id"/>-->
+                <!--                <field name="result_package_id"/>-->
+            </xpath>
+            <!--                <xpath expr="//form/sheet/notebook/page[2]/button[@name='put_in_pack']" position="replace"/>-->
+            <xpath expr="//form/sheet/div/button[@name='action_see_packages']" position="replace">
+                <!--                <button name="action_see_packages" string="BIN's" type="object" class="oe_stat_button" icon="fa-cubes"-->
+                <!--                        attrs="{'invisible': [('has_packages', '=', False)]}"/>-->
+            </xpath>
+            <xpath expr="//field[@name='date_done']" position="after">
+                <field name="delay_justification"/>
+                <!-- <field name="vendor_po_no"/> -->
+                <!--                <field name="vendor_po_no"/>-->
+            </xpath>
+        </field>
+    </record>
+   <!--  <record id="view_vendor_po_no_stock_picking_search" model="ir.ui.view">
+        <field name="name">stock.picking.select</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <search>
+                <field name="vendor_po_no"/>
+            </search>
+        </field>
+    </record> -->
+    <!--    <record id="inherited_view_quant_packag" model="ir.ui.view">-->
+    <!--        <field name="name">inherited.view.stock.quant.package.form</field>-->
+    <!--        <field name="model">stock.quant.package</field>-->
+    <!--        <field name="inherit_id" ref="stock.view_quant_package_form"/>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <xpath expr="//form/sheet/group/group/field[@name='owner_id']" position="replace"/>-->
+    <!--            <xpath expr="//form/sheet/group/group/field[@name='company_id']" position="replace"/>-->
+    <!--            &lt;!&ndash;                <xpath expr="//form/sheet/div[@name='button_box']" position="replace">&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    <div class="oe_button_box" name="button_box">&ndash;&gt;-->
+    <!--            &lt;!&ndash;                        <button class="oe_stat_button" name="action_view_picking" string="BIN Transfers" type="object" widget="statinfo" icon="fa-arrows-v"/>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                    </div>&ndash;&gt;-->
+    <!--            &lt;!&ndash;                </xpath>&ndash;&gt;-->
+    <!--            <xpath expr="//form/header/button[@name='unpack']" position="replace"/>-->
+    <!--            <xpath expr="//form/sheet/group/group/field[@name='location_id']" position="before">-->
+    <!--                <field name="bin_location_id"/>-->
+    <!--            </xpath>-->
+    <!--            <xpath expr="//form/sheet/group/group/field[@name='location_id']" position="replace">-->
+    <!--                <field name="location_id" invisible="1"/>-->
+    <!--            </xpath>-->
+    <!--        </field>-->
+    <!--    </record>-->
+    <record id="inherited_view_template_tree" model="ir.ui.view">
+        <field name="name">inherited.view.product.template.tree</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='standard_price']" position="replace">
+                <field groups="is_inventory_capital.group_cost_management" name="standard_price"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="inherited_view_move_tree" model="ir.ui.view">
+        <field name="name">inherited.view.stock.move.tree</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_tree"/>
+        <!--        <field name="arch" type="xml">-->
+        <!--            <xpath expr="//field[@name='location_id']" position="after">-->
+        <!--                <field name="package_id"/>-->
+        <!--                <field name="result_package_id"/>-->
+        <!--                <field name="on_hand_qty"/>-->
+        <!--            </xpath>-->
+        <!--        </field>-->
+    </record>
+    <!--    <record id="inherited_view_move_line_tree" model="ir.ui.view">-->
+    <!--        <field name="name">inherited.view.stock.move.line.tree</field>-->
+    <!--        <field name="model">stock.move.line</field>-->
+    <!--        <field name="inherit_id" ref="stock.view_move_line_tree"/>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <xpath expr="//field[@name='location_id']" position="after">-->
+    <!--                <field name="package_id"/>-->
+    <!--                <field name="result_package_id"/>-->
+    <!--                <field name="on_hand_qty"/>-->
+    <!--            </xpath>-->
+    <!--        </field>-->
+    <!--    </record>-->
+    <!--    <record id="product_template_view_form_inherit_stock" model="ir.ui.view">-->
+    <!--            <field name="name">product.template.inherit.form</field>-->
+    <!--            <field name="inherit_id" ref="stock.product_template_form_view_procurement_button"/>-->
+    <!--            <field name="model">product.template</field>-->
+    <!--            <field name="arch" type="xml">-->
+    <!--                <xpath expr="//button[@name='%(stock.action_stock_level_forecast_report_template)d']/div/span[@class='o_stat_text']" position="replace"/>-->
+    <!--                <xpath expr="//button[@name='%(stock.action_stock_level_forecast_report_template)d']/div/span" position="after">-->
+    <!--                    <span class="o_stat_text">Pipeline</span>-->
+    <!--                </xpath>-->
+    <!--            </field>-->
+    <!--        </record>-->
+    <!-- Product Template -->
+    <!--    <record model="ir.cron" id="ir_cron_replacement_check">-->
+    <!--            <field name="name">Check Replacement</field>-->
+    <!--            <field name="model_id" ref="model_product_template"/>-->
+    <!--            <field name="state">code</field>-->
+    <!--            <field name="code">model._schedule_check_replacement()</field>-->
+    <!--            <field name="interval_number">1</field>-->
+    <!--            <field name="interval_type">days</field>-->
+    <!--            <field name="numbercall">-1</field>-->
+    <!--            <field name="doall" eval="False"/>-->
+    <!--        </record>-->
+    <record id="view_inhereted_product_template_form_new" model="ir.ui.view">
+        <field name="name">product.inhereted</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[@name='general_information']" position="after">
+                <page name="alternatives" string="Replacement/Alternative Part NO">
+                    <field name="product_alternatives_ids" readonly="1">
+                        <tree editable="bottom" string="Replacement Number(s)">
+                            <field name="name"/>
+                            <field invisible="1" name="product_id"/>
+                            <field name="alternative_date"/>
+                            <field name="alternative_qty"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+            <!--            <xpath expr="//notebook/page[@name='inventory']/group[@name='inventory']/group[@name='traceability']"-->
+            <!--                   position="inside">-->
+            <!--                <field name="main_bin" options="{'no_create': True, 'no_create_edit':True}"/>-->
+            <!--                <field name="redsea_bin" options="{'no_create': True, 'no_create_edit':True}"/>-->
+            <!--                <field name="old_bins" widget="many2many_tags"/>-->
+            <!--            </xpath>-->
+        </field>
+    </record>
+    <!--    <menuitem id="stock.menu_package" name="BIN Locations" parent="stock.menu_warehouse_config"-->
+    <!--              action="stock.action_package_view" groups="stock.group_tracking_lot" sequence="102"/>-->
+    <!--    <record model="ir.actions.act_window" id="stock.action_package_view">-->
+    <!--        <field name="context">{}</field>-->
+    <!--        <field name="name">BIN Locations</field>-->
+    <!--        <field name="res_model">stock.quant.package</field>-->
+    <!--        <field name="view_mode">kanban,tree,form</field>-->
+    <!--        <field name="help" type="html">-->
+    <!--            <p class="o_view_nocontent_smiling_face">-->
+    <!--                Create a new package-->
+    <!--            </p>-->
+    <!--            <p>-->
+    <!--                Packages are usually created by pack operations made on transfers and can contains several different-->
+    <!--                products. You can then reuse a package to move its whole content somewhere else, or to pack it into-->
+    <!--                another bigger package. A package can also be unpacked, allowing the disposal of its former content as-->
+    <!--                single units again.-->
+    <!--            </p>-->
+    <!--        </field>-->
+    <!--    </record>-->
+</odoo>

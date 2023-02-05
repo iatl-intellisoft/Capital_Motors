@@ -1,0 +1,733 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* is_accounting_approval_11_iskan
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-17 14:26+0000\n"
+"PO-Revision-Date: 2018-04-17 17:54+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"Language: Arabic\n"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_mn_app_id
+msgid " Approval By"
+msgstr " Approval By"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<span>أخرى</span>"
+msgstr "<span>أخرى</span>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<span>اعتماد</span>"
+msgstr "<span>اعتماد</span>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<span>تحويل</span>"
+msgstr "<span>تحويل</span>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<span>شيك</span>"
+msgstr "<span>شيك</span>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<span>نقداً</span>"
+msgstr "<span>نقداً</span>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>الامضاء:</strong>"
+msgstr "<strong>الامضاء:</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>البنك:</strong>"
+msgstr "<strong>البنك:</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>التاريخ:</strong>"
+msgstr "<strong>التاريخ:</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>الرجاء التكرم بتصديق مبلغ</strong>"
+msgstr "<strong>الرجاء التكرم بتصديق مبلغ</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>الغرض:</strong>"
+msgstr "<strong>الغرض:</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>المبلغ كتابتة:</strong>"
+msgstr "<strong>المبلغ كتابتة:</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>المدير العام:</strong>"
+msgstr "<strong>المدير العام:</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>المدير المالي:</strong>"
+msgstr "<strong>المدير المالي:</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>المستفيد:</strong>"
+msgstr "<strong>المستفيد:</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>بند الصرف:</strong>"
+msgstr "<strong>بند الصرف:</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>بيانات الطلب</strong>"
+msgstr "<strong>بيانات الطلب</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>طريقة السداد:</strong>"
+msgstr "<strong>طريقة السداد:</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>مدير االادارة/القسم:</strong>"
+msgstr "<strong>مدير االادارة/القسم:</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>مدير الحسابات:</strong>"
+msgstr "<strong>مدير الحسابات:</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>مركز التكلفة:</strong>"
+msgstr "<strong>مركز التكلفة:</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid "<strong>مقدم الطلب:</strong>"
+msgstr "<strong>مقدم الطلب:</strong>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+msgid ""
+"<u>\n"
+"                                                                <strong>طلب "
+"تصديق مالي</strong>\n"
+"                                                            </u>"
+msgstr ""
+"<u>\n"
+"                                                                <strong>طلب "
+"تصديق مالي</strong>\n"
+"                                                            </u>"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model,name:is_accounting_approval_11_iskan.model_finance_approval
+msgid "A model for tracking finance approvals."
+msgstr "A model for tracking finance approvals."
+
+#. module: is_accounting_approval_11_iskan
+#: model:res.groups,name:is_accounting_approval_11_iskan.auditor_access_group
+msgid "Account Manager"
+msgstr "Account Manager"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_Account_No
+msgid "Account Number"
+msgstr "رقم الحساب"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+msgid "Accounting Details"
+msgstr "تفاصيل الحسابات"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_request_amount_words
+msgid "Amount in Words"
+msgstr "المبلغ بالحروف"
+
+#. module: is_accounting_approval_11_iskan
+#: code:addons/is_accounting_approval_11_iskan/account.py:536
+#, python-format
+msgid "An issue was faced when validating!"
+msgstr "هناك خطأ عند التحقق , فضلا املء كافة الحقول"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_analytic_account
+msgid "Analytic Account/Cost Center"
+msgstr " مركز التكلفه"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_check_followups_check_followups_approval_id
+msgid "Approval"
+msgstr "تصديق"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_check_followups_check_followups_approval_check
+#: model:ir.ui.menu,name:is_accounting_approval_11_iskan.approval_check
+msgid "Approval Check"
+msgstr "تصديق الشيك"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_approval_no
+msgid "Approval No."
+msgstr "تصديق رقم."
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+msgid "Approve"
+msgstr "تصديق"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+msgid "Approve Manager"
+msgstr "طلب التصديق"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_res_currency_narration_ar_cn
+msgid "Arabic Narration Denomination"
+msgstr "البيان بالعربيه"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_res_currency_narration_ar_un
+msgid "Arabic Narration Main"
+msgstr "البيان الاساسي بالعربيه"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,help:is_accounting_approval_11_iskan.field_finance_approval_approval_no
+msgid "Auto-generated Approval No. for finance approvals"
+msgstr "الرقم التسلسلس للتصديق المالي"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_Bank_id
+msgid "Bank"
+msgstr "البنك"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_journal_id
+msgid "Bank/Cash Journal"
+msgstr "يوميه الخزنه او البنك"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_beneficiary
+msgid "Beneficiary"
+msgstr "المستفيد"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: is_accounting_approval_11_iskan
+#: selection:finance.approval,payment_method:0
+msgid "Cash"
+msgstr "الخزنة"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_check_date
+msgid "Check Date"
+msgstr "تاريخ الشيك"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+msgid "Check Info"
+msgstr "معلومات الشيك"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_Check_no
+msgid "Check Number"
+msgstr "رقم الشيك"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model,name:is_accounting_approval_11_iskan.model_check_followups_check_followups
+msgid "Checks Followup"
+msgstr "متابعة الشيكات"
+
+#. module: is_accounting_approval_11_iskan
+#: selection:finance.approval,payment_method:0
+msgid "Cheque"
+msgstr "شيك"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+msgid "Comments"
+msgstr "التعليقات"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: is_accounting_approval_11_iskan
+#: code:addons/is_accounting_approval_11_iskan/account.py:572
+#: code:addons/is_accounting_approval_11_iskan/account.py:575
+#, python-format
+msgid "Configuration Error !"
+msgstr "Configuration Error !"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.inherit_account_voucher_payment_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model,name:is_accounting_approval_11_iskan.model_res_currency
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_request_currency
+msgid "Currency"
+msgstr "العملة"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_fa_date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_department_id
+msgid "Department"
+msgstr "القسم"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_name
+msgid "Details"
+msgstr "التفاصيل"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: is_accounting_approval_11_iskan
+#: selection:finance.approval,state:0
+msgid "Draft"
+msgstr "الجهة الطالبة"
+
+#. module: is_accounting_approval_11_iskan
+#: code:addons/is_accounting_approval_11_iskan/account.py:421
+#, python-format
+msgid "Expense Account with Check Followups not Include Supplyer selected!"
+msgstr "Expense Account with Check Followups not Include Supplyer selected!"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_expense_item
+msgid "Expense Item"
+msgstr "بند الصرف"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_exp_account
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_search
+msgid "Expense or Debit Account"
+msgstr "حساب المدين "
+
+#. module: is_accounting_approval_11_iskan
+#: code:addons/is_accounting_approval_11_iskan/account.py:418
+#, python-format
+msgid "Expense or debit account must be selected!"
+msgstr "حساب المدين او المصروف يجب اخيارة اولا!"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_search
+msgid "Filter By"
+msgstr "فرز بواسطة"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.actions.act_window,name:is_accounting_approval_11_iskan.action_fa
+#: model:ir.actions.report,name:is_accounting_approval_11_iskan.report_finance_approval_form
+#: model:ir.ui.menu,name:is_accounting_approval_11_iskan.menu_fa_child
+#: model:ir.ui.menu,name:is_accounting_approval_11_iskan.menu_fa_child_child
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_search
+msgid "Finance Approval"
+msgstr "تصديق"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.actions.act_window,name:is_accounting_approval_11_iskan.approval_check_action
+msgid "Finance Approval Check"
+msgstr "شيك التصديق المالي"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+msgid "Finance Approval Information"
+msgstr "تفاصيل التصديق المالي"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_state
+msgid "Finance Approval Status"
+msgstr "حاله التصديق المالي"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_tree
+msgid "Finance Approvals"
+msgstr "التصاديق المالية"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_fm_remarks
+msgid "Finance Man. Remarks"
+msgstr "تعليق المدير المالي"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+msgid "Finance Manager Approval"
+msgstr "تصديق"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_gm_app_id
+msgid "Financial  Approval By"
+msgstr "Financial  Approval By"
+
+#. module: is_accounting_approval_11_iskan
+#: selection:finance.approval,state:0
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.report_finance_approval
+#: model:mail.activity.type,name:is_accounting_approval_11_iskan.financial_approval
+msgid "Financial Approval"
+msgstr "في انتظار المدير المالي"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_search
+msgid "Financial Approval Date"
+msgstr "تصديق مالي بتاريخ"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+msgid "Financial Approval Management"
+msgstr "ادارة التصديق المالي"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.inherit_account_voucher_payment_form
+msgid "Financial Manager Approval"
+msgstr "تصديق المدير المالي"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_general_manager_id
+msgid "GM Approval By"
+msgstr "تصديق بواسطة المدير العام"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_gm_remarks
+msgid "General Man. Remarks"
+msgstr "تعليق المدير العام"
+
+#. module: is_accounting_approval_11_iskan
+#: model:res.groups,name:is_accounting_approval_11_iskan.general_manager_access_group
+msgid "General Manager"
+msgstr "المدير العام"
+
+#. module: is_accounting_approval_11_iskan
+#: selection:finance.approval,state:0
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.inherit_account_voucher_payment_form
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+msgid "General Manager Approval"
+msgstr "في انتظار تصديق المدير العام"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_move_id
+msgid "Journal Entry"
+msgstr "قيد يومية"
+
+#. module: is_accounting_approval_11_iskan
+#: code:addons/is_accounting_approval_11_iskan/account.py:424
+#, python-format
+msgid "Journal must be selected!"
+msgstr "اليومية يجب اختيارها اولا!"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval___last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_manager_id
+#: model:res.groups,name:is_accounting_approval_11_iskan.manager_access_group
+msgid "Manager"
+msgstr "المدير"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_au_app_id
+msgid "Manager Approval By"
+msgstr "تصديق مالي بواسطة"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_mn_remarks
+msgid "Manager Remarks"
+msgstr "تعليق المدير المباشر"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_res_users_approval_manager
+msgid "Manager for Approval(s)"
+msgstr "مدراء التصديق المالي"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_pa_name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: is_accounting_approval_11_iskan
+#: selection:finance.approval,payment_method:0
+msgid "Other"
+msgstr "اخري"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_payment_method
+msgid "Payment Method"
+msgstr "طريقة الدفع"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_payment_method_name
+msgid "Payment Method Name"
+msgstr "طريقة الدفع"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,help:is_accounting_approval_11_iskan.field_finance_approval_journal_id
+msgid "Payment journal."
+msgstr "يوميه الدفع."
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model,name:is_accounting_approval_11_iskan.model_account_payment
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: is_accounting_approval_11_iskan
+#: selection:finance.approval,state:0
+msgid "Ready for Payment"
+msgstr "للسداد"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: is_accounting_approval_11_iskan
+#: selection:finance.approval,state:0
+msgid "Rejected"
+msgstr "رفضت"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+msgid "Remarks"
+msgstr "التعاليق"
+
+#. module: is_accounting_approval_11_iskan
+#: code:addons/is_accounting_approval_11_iskan/account.py:131
+#, python-format
+msgid "Request Amount Must be greater than zero!"
+msgstr "يجب ادخال مبلغ اكبر من الصفر!"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_request_amount
+msgid "Requested Amount"
+msgstr "المبلغ المطلوب"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_requester
+msgid "Requester"
+msgstr "مقدم الطلب"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.menu,name:is_accounting_approval_11_iskan.menu_user_requests
+msgid "Requests and Approvals"
+msgstr "التصاديق المالية"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.inherit_res_users_form
+msgid "Resize Signature"
+msgstr "تعديل حجم الامضاء"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_res_users_resized_user_signature
+msgid "Resized Signature"
+msgstr "تعديل حجم الامضاء"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.inherit_check_followup_form
+msgid "Return to Partner"
+msgstr "ارجاع الشيك للشريك"
+
+#. module: is_accounting_approval_11_iskan
+#: selection:finance.approval,state:0
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.inherit_account_voucher_payment_form
+msgid "Reviewer Approval"
+msgstr " في انتظار مدير الحسابات"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_fm_app_id
+msgid "Reviewer Approval By"
+msgstr "تمت المراجعه بواسطة"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_auditor_remarks
+msgid "Reviewer Remarks"
+msgstr "تعليق مدير الحسابات"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+msgid "Set to Draft"
+msgstr "تعيين كمسودة"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_res_users_user_signature
+msgid "Signature"
+msgstr "التوقيع"
+
+#. module: is_accounting_approval_11_iskan
+#: code:addons/is_accounting_approval_11_iskan/account.py:226
+#: code:addons/is_accounting_approval_11_iskan/account.py:261
+#: code:addons/is_accounting_approval_11_iskan/account.py:300
+#: code:addons/is_accounting_approval_11_iskan/account.py:338
+#: code:addons/is_accounting_approval_11_iskan/account.py:448
+#: code:addons/is_accounting_approval_11_iskan/account.py:533
+#: code:addons/is_accounting_approval_11_iskan/account.py:540
+#: code:addons/is_accounting_approval_11_iskan/account.py:554
+#, python-format
+msgid "State Changed  Confirm -> <em>%s</em>."
+msgstr "تم تغيير الحاله الي -> <em>%s</em>."
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_search
+msgid "Status"
+msgstr "الحالة "
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_check_followups_check_followups_partner_name
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_partner_id
+msgid "Supplier"
+msgstr "المزود"
+
+#. module: is_accounting_approval_11_iskan
+#: code:addons/is_accounting_approval_11_iskan/account.py:573
+#, python-format
+msgid "The journal %s does not have a sequence, please specify one."
+msgstr "The journal %s does not have a sequence, please specify one."
+
+#. module: is_accounting_approval_11_iskan
+#: code:addons/is_accounting_approval_11_iskan/account.py:575
+#, python-format
+msgid "The sequence of journal %s is deactivated."
+msgstr "The sequence of journal %s is deactivated."
+
+#. module: is_accounting_approval_11_iskan
+#: selection:finance.approval,state:0
+msgid "To Approve"
+msgstr "في انتظار المدير المباشر"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_search
+msgid "Today"
+msgstr "اليوم"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_tree
+msgid "Total"
+msgstr "الإجمالي "
+
+#. module: is_accounting_approval_11_iskan
+#: selection:finance.approval,payment_method:0
+msgid "Transfer"
+msgstr "تحويل"
+
+#. module: is_accounting_approval_11_iskan
+#: selection:finance.approval,payment_method:0
+msgid "Trust"
+msgstr "ثقة"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_user_id
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_search
+msgid "User"
+msgstr "المستخدم"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model,name:is_accounting_approval_11_iskan.model_res_users
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.view_finance_approval_form
+msgid "Validate"
+msgstr "اعتماد "
+
+#. module: is_accounting_approval_11_iskan
+#: selection:finance.approval,state:0
+msgid "Validated"
+msgstr "تم الدفع"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_at_app_id
+msgid "Validated By"
+msgstr "تحققت بواسطة"
+
+#. module: is_accounting_approval_11_iskan
+#: model:res.groups,name:is_accounting_approval_11_iskan.validator_access_group
+msgid "Validator"
+msgstr "المعتمد"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.model.fields,field_description:is_accounting_approval_11_iskan.field_finance_approval_view_remarks
+msgid "View Remarks"
+msgstr "معاينه التعليقات"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.inherited_account_purchase_pay_select
+msgid "Waiting for Financial Manager Approval"
+msgstr "تصديق"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.inherited_account_purchase_pay_select
+msgid "Waiting for General Manager Approval"
+msgstr "تصديق"
+
+#. module: is_accounting_approval_11_iskan
+#: model:ir.ui.view,arch_db:is_accounting_approval_11_iskan.inherited_account_purchase_pay_select
+msgid "Waiting for Reviewer Approval"
+msgstr "في انتظار تصديق المراجع"

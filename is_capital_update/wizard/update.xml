@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="for_update_contract_form" model="ir.ui.view">
+            <field name="name">update.contract.form</field>
+            <field name="model">update.contract</field>
+            <field name="arch" type="xml">
+                <form string="update employee">
+                    <p class="oe_grey">You are trying to Update an Contract info are you sure ?.
+                    </p>
+                    <footer>
+                        <button class="btn-primary" default_focus="1" name="update_contract" string="Update Contract Info" type="object"/>
+                        <button class="btn-secondary" special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="for_update_contract" model="ir.actions.act_window">
+            <field name="name">Update Contract</field>
+            <field name="res_model">update.contract</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="hr_contract.model_hr_contract" />
+            <field name="binding_view_types">list,form</field>
+        </record>
+        <!-- <act_window binding_model="hr.contract" binding_views="list,form" groups="account.group_account_user" id="for_update_contract" name="Update Contract" res_model="update.contract" target="new" view_mode="form"/> -->
+    </data>
+</odoo>
