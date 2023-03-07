@@ -5,7 +5,7 @@
             string="Print Check"
             report_type="qweb-pdf"
             name="ii_simple_check_management.check_bank_template1"
-            file="ii_simple_check_management.check_bank_template"
+            file="ii_simple_check_management.check_bank_template1"
             />
 
     <record id="paperformat_partner_report" model="report.paperformat">
