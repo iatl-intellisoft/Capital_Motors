@@ -1,0 +1,59 @@
+<odoo>
+
+    <record id="wizard_check_replacement_view_form" model="ir.ui.view">
+        <field name="name">check.replacement.wizard.form</field>
+        <field name="model">check.replacement.wizard</field>
+        <field name="arch" type="xml">
+
+            <form string="Check Replacement">
+                <field name="original_check" invisible="1"/>
+                <field name="account_number" invisible="1"/>
+                <field name="bank_id" invisible="1"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="original_amount" invisible="1"/>
+                <sheet>
+                    <group>
+                        <field name="returning_memo"/>
+                    </group>
+                    <separator string="Check Replacements:"/>
+                    <field name="check_replacement_ids" context="{'_default_account_number': account_number, '_default_bank_id': bank_id, '_default_amount': original_amount}">
+                        <tree editable="bottom">
+                            <field name="amount"/>
+                            <field name="journal_id" domain="[('type', '=', 'bank')]" options="{'no_open': true}"/>
+                            <field name="date"/>
+                            <field name="number"/>
+                            <field name="memo"/>
+                            <field name="account_number"/>
+                            <field name="bank_id" options="{'no_open': true}"/>
+                            <field name="currency_id" options="{'no_open': true}"/>
+                        </tree>
+                    </field>
+                    <separator string="Cash Replacements:"/>
+                    <field name="cash_replacement_ids" context="{'_default_amount': original_amount}">
+                        <tree editable="bottom">
+                            <field name="amount"/>
+                            <field name="journal_id" domain="[('type', '=', 'cash')]" options="{'no_open': true}"/>
+                            <field name="date"/>
+                            <field name="memo"/>
+                            <field name="currency_id" options="{'no_open': true}"/>
+                        </tree>
+                    </field>
+                    <footer>
+                        <button name="confirm" string="Confirm" type="object" class="oe_highlight" /> or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_check_replacement_wizard" model="ir.actions.act_window">
+        <field name="name">Replace Check</field>
+        <field name="res_model">check.replacement.wizard</field>
+<!--        <field name="view_type">form</field>-->
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_check_replacement_view_form"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>
