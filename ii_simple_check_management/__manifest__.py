@@ -13,7 +13,7 @@
     'version': '0.1',
     'depends': ['account'],
     'data': [
-        #'views/payment.xml',
+        'views/payment.xml',
     ],
     'license': 'LGPL-3',
 }
