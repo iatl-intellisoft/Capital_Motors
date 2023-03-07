@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_check_followups_check_followups,check_followups.check_followups,model_check_followups_check_followups,,1,1,1,1
+access_check_followups_check_logs,check_followups.checklogs,model_check_followups_checklogs,,1,1,1,1
+access_payment_check_reports,payment.check_reports,model_payment_check_reports,,1,1,1,1

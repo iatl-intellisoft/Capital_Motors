@@ -1,0 +1,32 @@
+<odoo>
+    <record id="vendor_payment_check" model="ir.ui.view">
+        <field name="name">Vendor Check Printing</field>
+        <field name="model">payment.check_reports</field>
+        <field name="arch" type="xml">
+            <form string="Check">
+                   <p><strong>Check the Name and Check Number.</strong></p><br/>
+                    <group col="4">
+                        <field name="Account_Holder_Name" string="Pay To"/>
+                        <field name="check_no"/>
+<!--                        <field name="amount"/>-->
+                        <field name="Amount_in_word"/>
+                        <field name="amount_lang"/>
+                    </group>
+                    <footer>
+                        <button name="print_check_write" string="Print Check" type="object" class="oe_highlight" /> or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+        </field>
+    </record>
+ <record id="action_check_payment_print" model="ir.actions.act_window">
+        <field name="name">Print Check</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">payment.check_reports</field>
+<!--        <field name="view_type">form</field>-->
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="vendor_payment_check"/>
+        <field name="target">new</field>
+    </record>
+
+    </odoo>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--<template id="check_container">
+        <t t-set="body_classname" t-value="'container'"/>
+        <div class="article">
+            <t t-raw="0"/>
+        </div>
+    </template>-->
+
+    <template id="check_bank_template1">
+		<t t-call="web.external_layout">
+			<t t-call="web.html_container">
+			    <t t-foreach="docs" t-as="doc">
+                    <div class="page">
+                        <!--<div style="transform-origin:0% 100%;-webkit-transform:rotatez(90deg);position:absolute;top:45mm;left:-35mm;width: 170mm;height: 85mm;">-->
+                            <div t-att-style="amount_text">
+                                <div >
+                                    <span style="font-family:courier;" t-esc="Amount_in_text"/>
+                                </div>
+                            </div>
+                            <div t-att-style="Date">
+                                <div style="width:35mm;">
+                                    <strong>طلب تصديق مالي</strong>
+                                    <span t-esc="Date" />
+                                </div>
+                            </div>
+                            <div t-att-style="amount">
+                                <div>
+                                    <span style="-webkit-transform:rotate(90deg);" t-esc="'{:,}'.format(amount)"/>
+                                </div>
+                            </div>
+                            <div t-att-style="account_holder">
+                                <div >
+                                    <span t-esc="name" style="font-family:courier;"/>
+                                </div>
+                            </div>
+                        <!--</div>-->
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    
+    <report
+            id="check_print"
+            string="Check print"
+            report_type="qweb-pdf"
+            model="check_followups.check_followups"
+            name="ii_simple_check_management.check_bank_template1"
+            file="ii_simple_check_management.check_bank_template1"
+            menu="False"
+    />
+    <record id="Check_Page_Format" model="report.paperformat">
+        <field name="name">Check Page Format</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">170</field>
+        <field name="page_width">85</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+    <!--<record id="check_print" model="ir.actions.report">-->
+    <!--<field name="paperformat_id" ref="Check_Page_Format"/>-->
+    <!--</record>-->
+
+</odoo>

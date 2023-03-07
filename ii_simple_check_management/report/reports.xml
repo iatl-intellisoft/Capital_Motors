@@ -1,0 +1,24 @@
+<odoo>
+
+    <report id="action_check_report"
+            model="payment.check_reports"
+            string="Print Check"
+            report_type="qweb-pdf"
+            name="ii_simple_check_management.check_bank_template1"
+            file="ii_simple_check_management.check_bank_template"
+            />
+
+    <record id="paperformat_partner_report" model="report.paperformat">
+        <field name="name">Partner Financial Report A4</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">20</field>
+        <field name="margin_bottom">23</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">10</field>
+    </record>
+
+</odoo>
