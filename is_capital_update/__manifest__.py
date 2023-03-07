@@ -12,7 +12,7 @@
     'version': '16.0.0.1',
     # any module necessary for this one to work correctly
     'depends': ['base', 'hr', 'hr_attendance', 'hr_contract', 'hr_payroll', 'hr_holidays',
-                'hr_payroll_account', 'account', 'ii_check_management_15', 'is_hr_capital'],
+                'hr_payroll_account', 'account', 'ii_simple_check_management', 'is_hr_capital'],
     # always loaded
     'data': [
         'security/ir.model.access.csv',
