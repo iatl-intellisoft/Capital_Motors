@@ -56,6 +56,13 @@ class AccountPayment(models.Model):
     Bank_id = fields.Char(string='Partner Bank')
     check_date = fields.Date('Check Date')
     check_amount_in_words = fields.Char('Amount In Words')
+    destination_account_id = fields.Many2one(
+        comodel_name='account.account',
+        string='Destination Account',
+        store=True, readonly=False,
+        compute='_compute_destination_account_id',
+        domain="[('company_id', '=', company_id)]",
+        check_company=True)
 
     # Modify indirecting account to be direct
     def _prepare_move_line_default_vals(self, write_off_line_vals=None):
